@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Mulish } from "next/font/google";
 import "./globals.css";
 import React from "react";
+import { Header } from "@/sections/Header";
 import Navbar from "@/components/layout/Navbar";
 import { ThemeProvider } from "@/app/theme-provider";
 import Footer from "@/components/layout/Footer";
@@ -18,10 +19,11 @@ export default function RootLayout({
   children
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="relative dark">
       <body className={font.className}>
         <ThemeProvider>
-          <Navbar />
+          {/* <Navbar /> */}
+          <Header />
           {children}
           <Footer />
         </ThemeProvider>
