@@ -23,18 +23,8 @@ export default function Home() {
       <div className="border-b border-border">
         <main className="container mx-auto">
           <div className="relative md:mt-24 mx-auto w-full max-w-4xl pt-4 text-center">
-            <div className="justify-center hidden md:flex">
-              <div className="flex flex-row items-center justify-center gap-5 p-1 text-xs bg-card/60 backdrop-blur-lg rounded-md border border-border">
-                <Badge className="font-semibold">New</Badge>
-                <h5>Announce your new feature here</h5>
-                <Link href="/" className="flex flex-row items-center">
-                  View all features
-                  <ArrowRightIcon className="w-6 h-6 ml-2" />
-                </Link>
-              </div>
-            </div>
             <h1 className="md:text-7xl my-4 font-extrabold text-4xl md:leading-tight">
-              Create perfect projects with this landing page!
+              Helping your church communicate better.
             </h1>
             <p className="mx-auto my-4 text-sm w-full max-w-xl text-center font-medium leading-relaxed tracking-wide">
               This is a landing page template that you can use to create a
@@ -48,7 +38,7 @@ export default function Home() {
               <Button variant="secondary">Learn More</Button>
             </div>
 
-            <div className="absolute top-0 -z-10 max-h-full max-w-screen-lg w-full h-full blur-2xl">
+            <div className="absolute top-0 -z-10 max-h-full max-w-screen-lg w-full h-full blur-2xl overflow-hidden">
               <div className="absolute top-24 left-24 w-56 h-56 bg-violet-600 rounded-full mix-blend-multiply opacity-70 animate-blob filter blur-3xl"></div>
               <div className="absolute hidden md:block bottom-2 right-1/4 w-56 h-56 bg-sky-600 rounded-full mix-blend-multiply opacity-70 animate-blob delay-1000 filter blur-3xl"></div>
               <div className="absolute hidden md:block bottom-1/4 left-1/3 w-56 h-56 bg-pink-600 rounded-full mix-blend-multiply opacity-70 animate-blob delay-500 filter blur-3xl"></div>
@@ -70,7 +60,10 @@ export default function Home() {
 
       {/* features */}
 
-      <section className="border-b border-border bg-gradient-to-b from-background to-transparent via-background via-90% relative">
+      <section
+        id="features"
+        className="border-b border-border bg-gradient-to-b from-background to-transparent via-background via-90% relative"
+      >
         <div className="container mx-auto text-center">
           <div className="my-24">
             <h5 className="text-primary">WHY CHOOSE US</h5>
@@ -102,7 +95,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="absolute top-0 -z-10 max-h-full w-full h-full blur-2xl">
+        <div className="absolute top-0 -z-10 max-h-full w-full h-full blur-2xl overflow-hidden">
           <div className="absolute bottom-0 left-0 w-1/2 h-56 bg-violet-600 rounded-full mix-blend-multiply opacity-70 animate-blob filter blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-1/2 h-56 bg-sky-600 rounded-full mix-blend-multiply opacity-70 animate-blob delay-1000 filter blur-3xl"></div>
         </div>
