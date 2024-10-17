@@ -1,13 +1,10 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { useClickAway } from "react-use";
+import React, { useEffect, useState, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import LogoIcon from "@/assets/logo.svg";
-import MenuIcon from "@/assets/icon-menu.svg";
-import { Button } from "@/components/Button";
-import { ThemeChanger } from "@/app/Theme-changer";
+import { useClickAway } from "react-use";
 import { Squash as Hamburger } from "hamburger-react";
+import { ThemeChanger } from "@/app/Theme-changer";
 import { routes } from "@/data/routes";
 
 let tabs = [
@@ -18,23 +15,45 @@ let tabs = [
   { id: "science", label: "Science" }
 ];
 
-export const Header = () => {
+export const NewNav = () => {
   const [isOpen, setOpen] = useState(false);
   const ref = useRef(null);
   useClickAway(ref, () => setOpen(false));
   let [activeTab, setActiveTab] = useState(tabs[0].id);
 
+  const variants = {
+    open: {
+      height: 480
+    },
+    closed: {
+      height: 70
+    }
+  };
+
   return (
-    <header className="py-4 border-none sticky top-0 z-50">
-      <div className="absolute inset-0  -z-10 "></div>
-      <div className="container">
-        <motion.div className="flex border rounded-full max-w-2xl mx-auto relative shadow-[0_10px_20px_rgba(_40,149,_255,_0.6)]">
-          <div className="flex backdrop-blur-md rounded-full mx-auto  w-full justify-between items-center relative md:p-2.5">
-            <div>
-              <div className="border w-10 h-10 rounded-lg inline-flex justify-center items-center border-white/15">
-                <div className="absolute inset-0 -z-10 hidden md:block"></div>
-                <LogoIcon className="w-8 h-8" />
-              </div>
+    <>
+      <div
+        className="fixed inset-x-0 top-2 lg:top-8 z-50"
+        x-data="{ atTop: true }"
+      >
+        <motion.div className="mx-auto px-8  transition-all duration-1000 ease-in-out transform lg:max-w-2xl flex sm:align-top">
+          <motion.div
+            animate={isOpen ? "open" : "closed"}
+            variants={variants}
+            transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
+            className="flex sm:justify-between backdrop-blur-xl backdrop-filter dark:bg-onyx-900/60 border dark:border-onyx-800 border-primeBlue-100 md:flex-row md:items-center md:justify-between mx-auto p-2 relative lg:rounded-2xl rounded-xl shadow-mdbl dark:shadow-massive w-full "
+            x-data="{ open: false }"
+          >
+            <div className="items-top flex flex-row justify-between md:justify-start sm:pt-1">
+              <a
+                className="inline-flex text-md items-top font-display pl-2 hover:text-white/50"
+                href="/"
+              >
+                <span>Aubergine</span>
+              </a>
+              {/* <div ref={ref} className="md:hidden">
+                <Hamburger toggled={isOpen} size={20} toggle={setOpen} />
+              </div> */}
             </div>
             <div className="flex space-x-1 hidden md:block">
               <nav className="flex gap-8 text-sm">
@@ -68,23 +87,7 @@ export const Header = () => {
                 ))}
               </nav>
             </div>
-            {/* <div className="hidden md:block">
-            <nav className="flex gap-8 text-sm">
-              <a href="#" className="transition">
-                Features
-              </a>
-              <a href="#" className="transition">
-                Developers
-              </a>
-              <a href="#" className="transition">
-                Pricing
-              </a>
-              <a href="#" className="transition">
-                About us
-              </a>
-            </nav>
-          </div> */}
-            <div className="flex gap-4 items-center">
+            <div className="flex gap-4 items-top">
               <ThemeChanger />
               {/* <Button>Join waitlist</Button> */}
               <div ref={ref} className="md:hidden">
@@ -95,8 +98,8 @@ export const Header = () => {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                      className="fixed left-0 shadow-4xl right-0 top-[3.5rem] p-5 pt-0 border-b border-b-white/20"
+                      transition={{ duration: 0.18 }}
+                      className="fixed left-0 shadow-4xl right-0 top-[3.5rem] p-5 pt-0"
                     >
                       <ul className="grid gap-2">
                         {routes.map((route, idx) => {
@@ -110,7 +113,7 @@ export const Header = () => {
                                 type: "spring",
                                 stiffness: 300,
                                 damping: 25,
-                                delay: 0.1 + idx / 15
+                                delay: 0.1 + idx / 30
                               }}
                               key={route.title}
                               className="w-full p-[0.08rem] rounded-xl "
@@ -118,7 +121,7 @@ export const Header = () => {
                               <a
                                 onClick={() => setOpen((prev) => !prev)}
                                 className={
-                                  "flex items-center justify-between w-full p-5 rounded-xl dark:bg-onyx-950 bg-primeBlue-100 shadow-md"
+                                  "flex items-top justify-between w-full p-5 text-center text-black-200 duration-500 ease-in-out transform border border-white dark:border-onyx-800 dark:bg-onyx-900 rounded-xl bg-transparent backdrop-blur-md shadow-md backdrop-filter"
                                 }
                                 href={route.href}
                               >
@@ -137,9 +140,9 @@ export const Header = () => {
               </div>
               {/* <MenuIcon className="w-8 h-8 md:hidden" /> */}
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
-    </header>
+    </>
   );
 };

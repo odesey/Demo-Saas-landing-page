@@ -11,6 +11,8 @@ import {
   CardHeader,
   CardTitle
 } from "@/components/ui/card";
+import { DarkGridHero } from "@/sections/DarkGridHero";
+import { NewHero } from "@/sections/NewHero";
 import { features } from "@/data/features";
 import { pricing } from "@/data/pricing";
 import { CircleCheck } from "lucide-react";
@@ -20,11 +22,13 @@ export const runtime = "edge";
 export default function Home() {
   return (
     <>
+      {/* <DarkGridHero /> */}
+      {/* <NewHero /> */}
       <div className="border-b border-border">
         <main className="container mx-auto">
           <div className="relative md:mt-24 mx-auto w-full max-w-4xl pt-4 text-center">
             <h1 className="md:text-7xl my-4 font-extrabold text-4xl md:leading-tight">
-              Helping your church communicate better.
+              Bridge your Church's communication gap with GenesisApp.
             </h1>
             <p className="mx-auto my-4 text-sm w-full max-w-xl text-center font-medium leading-relaxed tracking-wide">
               This is a landing page template that you can use to create a
@@ -98,60 +102,6 @@ export default function Home() {
         <div className="absolute top-0 -z-10 max-h-full w-full h-full blur-2xl overflow-hidden">
           <div className="absolute bottom-0 left-0 w-1/2 h-56 bg-violet-600 rounded-full mix-blend-multiply opacity-70 animate-blob filter blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-1/2 h-56 bg-sky-600 rounded-full mix-blend-multiply opacity-70 animate-blob delay-1000 filter blur-3xl"></div>
-        </div>
-      </section>
-
-      {/* Pricing */}
-
-      <section className="border-b dark border-border bg-background">
-        <div className="container mx-auto text-center">
-          <div className="py-14">
-            <h2 className="text-4xl font-extrabold my-4 text-foreground">
-              Pricing Plans
-            </h2>
-
-            <p className="mx-auto my-4 text-sm w-full max-w-md bg-transparent text-center font-medium leading-relaxed tracking-wide text-muted-foreground">
-              Choose a plan that works best for you. You can always upgrade or
-              downgrade your plan later.
-            </p>
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-              {pricing.map((plan) => (
-                <Card
-                  key={plan.title}
-                  className="w-full mx-auto max-w-xl text-left relative"
-                >
-                  {plan.fancy && (
-                    <Badge className="absolute top-4 right-4">Popular</Badge>
-                  )}
-                  <CardHeader>
-                    <CardTitle className="text-2xl">{plan.title}</CardTitle>
-                    <CardDescription className="mt-4">
-                      {plan.description}
-                    </CardDescription>
-                    <h5 className="text-2xl font-bold">{plan.price}</h5>
-                  </CardHeader>
-                  <CardContent>
-                    <Button
-                      className="w-full"
-                      variant={plan.fancy ? "default" : "secondary"}
-                    >
-                      Get Started
-                    </Button>
-                  </CardContent>
-                  <CardFooter>
-                    <ul className="mt-4">
-                      {plan.features.map((feature) => (
-                        <li key={feature} className="flex items-center gap-2">
-                          <CircleCheck className="w-4 h-4 text-green-500" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </CardFooter>
-                </Card>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
     </>
