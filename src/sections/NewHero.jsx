@@ -241,4 +241,4 @@ const Beam = ({ top, left, transition = {} }) => {
 };
 
 const GRID_BOX_SIZE = 32;
-const BEAM_WIDTH_OFFSET = -2;
+const BEAM_WIDTH_OFFSET = -10;

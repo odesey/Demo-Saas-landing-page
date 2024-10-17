@@ -6,13 +6,14 @@ import { useClickAway } from "react-use";
 import { Squash as Hamburger } from "hamburger-react";
 import { ThemeChanger } from "@/app/Theme-changer";
 import { routes } from "@/data/routes";
+import Logo from "@/assets/logo.svg";
 
 let tabs = [
-  { id: "world", label: "World" },
-  { id: "ny", label: "N.Y." },
-  { id: "business", label: "Business" },
-  { id: "arts", label: "Arts" },
-  { id: "science", label: "Science" }
+  { id: "world", label: "Features" },
+  { id: "ny", label: "Benefits" },
+  { id: "business", label: "Screenshots" },
+  { id: "arts", label: "F.A.Q" },
+  { id: "science", label: "Contact" }
 ];
 
 export const NewNav = () => {
@@ -32,31 +33,27 @@ export const NewNav = () => {
 
   return (
     <>
-      <div
-        className="fixed inset-x-0 top-2 lg:top-8 z-50"
-        x-data="{ atTop: true }"
-      >
-        <motion.div className="mx-auto px-8  transition-all duration-1000 ease-in-out transform lg:max-w-2xl flex sm:align-top">
+      <div className="fixed inset-x-0 top-2 lg:top-8 z-50">
+        <motion.div className="mx-auto px-8 lg:max-w-3xl flex sm:align-top">
           <motion.div
             animate={isOpen ? "open" : "closed"}
             variants={variants}
             transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
             className="flex sm:justify-between backdrop-blur-xl backdrop-filter dark:bg-onyx-900/60 border dark:border-onyx-800 border-primeBlue-100 md:flex-row md:items-center md:justify-between mx-auto p-2 relative lg:rounded-2xl rounded-xl shadow-mdbl dark:shadow-massive w-full "
-            x-data="{ open: false }"
           >
             <div className="items-top flex flex-row justify-between md:justify-start sm:pt-1">
               <a
                 className="inline-flex text-md items-top font-display pl-2 hover:text-white/50"
                 href="/"
               >
-                <span>Aubergine</span>
+                <Logo className="size-8" />
               </a>
               {/* <div ref={ref} className="md:hidden">
                 <Hamburger toggled={isOpen} size={20} toggle={setOpen} />
               </div> */}
             </div>
             <div className="flex space-x-1 hidden md:block">
-              <nav className="flex gap-8 text-sm">
+              <nav className="flex lg:gap-6 text-sm md:gap-2">
                 {tabs.map((tab) => (
                   <button
                     key={tab.id}
@@ -73,14 +70,16 @@ export const NewNav = () => {
                     {activeTab === tab.id && (
                       <motion.span
                         layoutId="bubble"
-                        className="absolute inset-0 z-10 bg-gradient-to-tr shadow-mdbl from-primeBlue-500 via-primeBlue-400 to-primeBlue-300 dark:mix-blend-screen mix-blend-multiply "
+                        className="absolute inset-0 z-10 shadow-mdbl bg-gradient-to-tr from-primeBlue-500 via-primeBlue-400 to-primeBlue-300 dark:mix-blend-screen mix-blend-multiply p-[1.5px]"
                         style={{ borderRadius: 9999 }}
                         transition={{
                           type: "spring",
                           bounce: 0.2,
                           duration: 0.6
                         }}
-                      />
+                      >
+                        <span className="bg-primeBlue-50 dark:bg-onyx-900 flex h-full w-full rounded-full"></span>
+                      </motion.span>
                     )}
                     {tab.label}
                   </button>
