@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
 
 const config = {
   darkMode: ["class"],
@@ -10,6 +12,14 @@ const config = {
   ],
   prefix: "",
   theme: {
+    boxShadow: {
+      sm: "box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",
+      md: "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
+      mdbl: "0px 7px 16px rgb(40 149 255 / 20%);",
+      big: "0px 7px 32px rgb(0 0 0 / 35%);",
+      massive:
+        "0px 64px 64px rgba(0, 0, 0, 0.15), 0px 32px 32px rgba(0, 0, 0, 0.15), 0px 16px 16px rgba(0, 0, 0, 0.15), 0px 8px 8px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.15);"
+    },
     screens: {
       sm: "375px",
       md: "768px",
@@ -31,6 +41,40 @@ const config = {
         }
       },
       colors: {
+        white: colors.white,
+        black: colors.black,
+        pink: colors.pink,
+        indigo: colors.indigo,
+        transparent: colors.transparent,
+        onyx: {
+          50: "#F1F1F4",
+          100: "#E3E3E8",
+          200: "#C8C6D2",
+          300: "#AFADBE",
+          400: "#9490A7",
+          500: "#787490",
+          600: "#605D75",
+          700: "#4B485B",
+          800: "#34323F",
+          900: "#1f1e26",
+          950: "#1c1b22"
+        },
+        blue: {
+          50: "#F6F6FE",
+          100: "#ECEDFD",
+          200: "#D0D1FB",
+          300: "#B9BAF9",
+          400: "#9395F5",
+          500: "#6366F1"
+        },
+        primeBlue: {
+          50: "#f6fbff",
+          100: "#e7f3ff",
+          200: "#bedfff",
+          300: "#9ecfff",
+          400: "#6bb6ff",
+          500: "#2895FF"
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
