@@ -62,7 +62,7 @@ export const NewNav = () => {
                       activeTab === tab.id
                         ? ""
                         : "hover:text-[#2895ff] font-medium"
-                    } relative rounded-full px-3 py-1.5 text-sm  transition focus-visible:outline-2`}
+                    } relative rounded-full px-3 py-1.5 text-sm transition focus-visible:outline-2`}
                     style={{
                       WebkitTapHighlightColor: "transparent"
                     }}
@@ -70,7 +70,7 @@ export const NewNav = () => {
                     {activeTab === tab.id && (
                       <motion.span
                         layoutId="bubble"
-                        className="absolute inset-0 z-10 shadow-mdbl bg-gradient-to-tr from-primeBlue-500 via-primeBlue-400 to-primeBlue-300 dark:mix-blend-screen mix-blend-multiply p-[1.5px]"
+                        className="absolute inset-[0.5px] z-10 shadow-mdbl bg-gradient-to-tr from-primeBlue-500 via-primeBlue-400 to-primeBlue-300 dark:mix-blend-screen mix-blend-multiply p-[1.5px]"
                         style={{ borderRadius: 9999 }}
                         transition={{
                           type: "spring",

@@ -23,7 +23,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="relative dark" suppressHydrationWarning>
-      <body className={`${font.className} bg-primeBlue-50 dark:bg-onyx-950`}>
+      <body
+        className={`${font.className} bg-primeBlue-50 dark:bg-onyx-950 antialiased`}
+      >
         <ThemeProvider>
           <NewHero />
           <NewNav />

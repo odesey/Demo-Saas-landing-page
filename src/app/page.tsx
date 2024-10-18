@@ -27,21 +27,6 @@ export default function Home() {
       <div className="border-b border-border">
         <main className="container mx-auto">
           <div className="relative md:mt-24 mx-auto w-full max-w-4xl pt-4 text-center">
-            <h1 className="md:text-7xl my-4 font-extrabold text-4xl md:leading-tight">
-              Bridge your Church's communication gap with GenesisApp.
-            </h1>
-            <p className="mx-auto my-4 text-sm w-full max-w-xl text-center font-medium leading-relaxed tracking-wide">
-              This is a landing page template that you can use to create a
-              beautiful website. It is designed to be easy to use and customize.
-              You can use this template to create a landing page for your app,
-              product, or service. It is built with Next.js, Tailwind CSS, and
-              TypeScript.
-            </p>
-            <div className="flex flex-row justify-center items-center space-x-4 my-8">
-              <Button>Get Started</Button>
-              <Button variant="secondary">Learn More</Button>
-            </div>
-
             <div className="absolute top-0 -z-10 max-h-full max-w-screen-lg w-full h-full blur-2xl overflow-hidden">
               <div className="absolute top-24 left-24 w-56 h-56 bg-violet-600 rounded-full mix-blend-multiply opacity-70 animate-blob filter blur-3xl"></div>
               <div className="absolute hidden md:block bottom-2 right-1/4 w-56 h-56 bg-sky-600 rounded-full mix-blend-multiply opacity-70 animate-blob delay-1000 filter blur-3xl"></div>
