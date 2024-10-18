@@ -10,7 +10,7 @@ export const NewHero = () => {
     <>
       <HeaderGrid />
       <Beams />
-      <div className="w-full min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
+      <div className="w-full min-h-screen flex items-center justify-center p-4 relative overflow-hidden pt-16">
         <div className="absolute inset-0" style={{ filter: "blur(5px)" }}></div>
         {/* <DotPattern className="z-0" /> */}
         <div className="max-w-7xl w-full flex flex-col lg:flex-row items-center justify-between rounded-xl p-4 sm:p-8 relative z-10">
