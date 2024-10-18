@@ -85,8 +85,8 @@ const features = [
 
 export const Features = () => {
   return (
-    <section className="overflow relative">
-      <div className="px-8 mx-auto md:px-12 lg:px-36 max-w-7xl">
+    <section className="overflow relative py-[72px] md:py-24">
+      <div className="container">
         <div
           className="lg:text-center max-w-3xl lg:mx-auto"
           data-aos="fade-up"
@@ -101,7 +101,7 @@ export const Features = () => {
             </span>
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-6 lg:grid-cols-3 lg:gap-x-6 mt-24 lg:gap-y-4 lg:text-center">
+        <div className="grid md:grid-cols-2 gap-6 lg:grid-cols-3 lg:gap-x-6 mt-24 lg:gap-y-4 lg:text-center ">
           {features.map((feature) => (
             <FeatureCard
               key={feature.title}
