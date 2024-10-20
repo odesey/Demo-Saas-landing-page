@@ -31,7 +31,7 @@ export const NewHero = () => {
                 church communicate better.
               </p>
               <p className=" text-lg sm:text-xl opacity-60 font-bold mb-8 max-w-[564px]">
-                Download GenesisApp and get started today:
+                Download GenesisApp and get started today.
               </p>
             </BlurFade>
 
@@ -58,7 +58,7 @@ export const NewHero = () => {
                     </svg>
                   </div>
                   <div className="text">
-                    <p className=" text-sm sm:text-lg font-semibold dark:text-primeBlue-50 pl-4">
+                    <p className="text-lg font-semibold dark:text-primeBlue-50 pl-4">
                       Apple Store
                     </p>
                   </div>
