@@ -6,6 +6,7 @@ import { Header } from "@/sections/Header";
 import { Features } from "@/sections/Features";
 import { NewHero } from "@/sections/NewHero";
 import { NewNav } from "@/sections/NewNav";
+import { ScreenShots } from "@/sections/ScreenShots";
 import Navbar from "@/components/layout/Navbar";
 import { ThemeProvider } from "@/app/theme-provider";
 import Footer from "@/components/layout/Footer";
@@ -30,6 +31,7 @@ export default function RootLayout({
           <NewHero />
           <NewNav />
           <Features />
+          <ScreenShots />
           {/* <Navbar /> */}
           {/* <Header /> */}
           {children}

@@ -47,8 +47,10 @@ export const FeatureCard = ({
       <div className="inline-flex size-16 justify-center items-center dark:fill-white">
         {icon}
       </div>
-      <h3 className="mt-6 font-bold">{title}</h3>
-      <p className="mt-2 ">{description}</p>
+      <h3 className="mt-2 text-xl font-medium text-onyx-700 dark:text-onyx-100">
+        {title}
+      </h3>
+      <p className="mt-4 dark:text-onyx-300 text-onyx-500">{description}</p>
     </div>
   );
 };

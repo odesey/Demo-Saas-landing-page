@@ -28,7 +28,7 @@ const features = [
   {
     title: "Broadcasts",
     description:
-      "Send messages to nearby churches. Invite them to attend or support programs being offered by your church.",
+      "Send messages to nearby churches. Invite them to attend and support programs being offered by your church.",
     dataAos: "fade-left",
     icon: <Broadcast className={ICON_CLASS} />
   },
@@ -85,23 +85,19 @@ const features = [
 
 export const Features = () => {
   return (
-    <section className="overflow relative py-[72px] md:py-24">
+    <section className="overflow relative">
       <div className="container">
         <div
-          className="lg:text-center max-w-3xl lg:mx-auto"
+          className="text-center max-w-3xl lg:mx-auto"
           data-aos="fade-up"
           data-aos-duration="2000"
         >
-          <h3 className="text-4xl  font-display">Key Features</h3>
+          <h3 className="text-4xl font-display">Key Features</h3>
           <p className="text-onyx-300 mt-4">
-            Perks so good you'll never need to go
-            <span className="md:block">
-              {" "}
-              anywhere else for your design. Seriously.
-            </span>
+            Here are some of the features that GenesisApp offers
           </p>
         </div>
-        <div className="grid md:grid-cols-2 gap-6 lg:grid-cols-3 lg:gap-x-6 mt-24 lg:gap-y-4 lg:text-center ">
+        <div className="grid md:grid-cols-2 gap-6 lg:grid-cols-3 lg:gap-x-6 mt-24 lg:gap-y-4 lg:text-center mx-8">
           {features.map((feature) => (
             <FeatureCard
               key={feature.title}
@@ -130,6 +126,9 @@ export const Features = () => {
             //   </p>
             // </div>
           ))}
+        </div>
+        <div className="text-center max-w-3xl lg:mx-auto mt-16">
+          <h4 className="text-2xl font-display">Plus much, much more!</h4>
         </div>
       </div>
     </section>
