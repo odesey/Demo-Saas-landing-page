@@ -21,7 +21,7 @@ import { Header } from "@/sections/Header";
 import { Faq } from "@/sections/Faq";
 import { Features } from "@/sections/Features";
 import { NewNav } from "@/sections/NewNav";
-import { ImageSlider } from "@/sections/ImageSlider";
+// import { ImageSlider } from "@/sections/ImageSlider";
 import { ScreenShots } from "@/sections/ScreenShots";
 import { CircleCheck } from "lucide-react";
 
