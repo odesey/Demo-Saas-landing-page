@@ -5,22 +5,27 @@
 
 export const routes = [
   {
-    title: "Home",
+    title: "Features",
     href: "#"
     // Icon: BiHomeAlt2,
   },
   {
-    title: "Explore",
+    title: "Screenshots",
     href: "#"
     // Icon: FiSearch,
   },
   {
-    title: "Pricing",
+    title: "Download",
+    href: "#"
+    // Icon: PiChatCircleBold,
+  },
+  {
+    title: "F.A.Q",
     href: "#"
     // Icon: IoPricetagsOutline,
   },
   {
-    title: "About",
+    title: "Contact",
     href: "#"
     // Icon: PiChatCircleBold,
   }
