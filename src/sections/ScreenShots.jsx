@@ -44,12 +44,19 @@ export const ScreenShots = () => {
       768: {
         slidesPerView: 2,
         centeredSlides: true,
-        loopAdditionalSlides: 0,
+        loopAdditionalSlides: 2,
         speed: 500,
         navigation: { enabled: false },
         resistanceRatio: 0.85
       },
-      1280: { slidesPerView: 3 }
+      1280: {
+        slidesPerView: 3,
+        centeredSlides: true,
+        loopAdditionalSlides: 2,
+        speed: 500,
+        navigation: { enabled: false },
+        resistanceRatio: 0.85
+      }
     }
   };
 
@@ -98,6 +105,16 @@ export const ScreenShots = () => {
                     className="block object-scale-down"
                   />
                 </div>
+                {/* <div className="flex items-center justify-center">
+                  <Image
+                    width={0}
+                    height={0}
+                    // style={{ width: "100%", height: "auto" }}
+                    src={image.src}
+                    alt={image.alt}
+                    className="block object-scale-down rotate-180 transform-gpu backdrop:blur-md"
+                  />
+                </div> */}
               </SwiperSlide>
             ))}
           </Swiper>
