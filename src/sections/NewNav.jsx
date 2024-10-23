@@ -9,11 +9,11 @@ import { routes } from "@/data/routes";
 import Logo from "@/assets/logo.svg";
 
 let tabs = [
-  { id: "world", label: "Features" },
-  { id: "ny", label: "Benefits" },
-  { id: "business", label: "Screenshots" },
-  { id: "arts", label: "F.A.Q" },
-  { id: "science", label: "Contact" }
+  { id: "features", label: "Features" },
+  { id: "screenshots", label: "Screenshots" },
+  { id: "download", label: "Download" },
+  { id: "faq", label: "F.A.Q" },
+  { id: "contact", label: "Contact" }
 ];
 
 export const NewNav = () => {
@@ -24,7 +24,7 @@ export const NewNav = () => {
 
   const variants = {
     open: {
-      height: 480
+      height: 590
     },
     closed: {
       height: 70
@@ -34,7 +34,7 @@ export const NewNav = () => {
   return (
     <>
       <div className="fixed inset-x-0 top-2 lg:top-8 z-50">
-        <motion.div className="mx-auto px-8 lg:max-w-3xl flex sm:align-top">
+        <motion.div className="mx-auto px-6 lg:max-w-3xl flex sm:align-top">
           <motion.div
             animate={isOpen ? "open" : "closed"}
             variants={variants}
@@ -48,9 +48,6 @@ export const NewNav = () => {
               >
                 <Logo className="size-8" />
               </a>
-              {/* <div ref={ref} className="md:hidden">
-                <Hamburger toggled={isOpen} size={20} toggle={setOpen} />
-              </div> */}
             </div>
             <div className="flex space-x-1 hidden md:block">
               <nav className="flex lg:gap-6 text-sm md:gap-2">
@@ -87,7 +84,7 @@ export const NewNav = () => {
               </nav>
             </div>
             <div className="flex gap-4 items-top">
-              <ThemeChanger />
+              {/* <ThemeChanger /> */}
               {/* <Button>Join waitlist</Button> */}
               <div ref={ref} className="md:hidden">
                 <Hamburger toggled={isOpen} size={20} toggle={setOpen} />
@@ -140,6 +137,9 @@ export const NewNav = () => {
               {/* <MenuIcon className="w-8 h-8 md:hidden" /> */}
             </div>
           </motion.div>
+          <div className="flex items-top ml-3 mt-[14px] ">
+            <ThemeChanger />
+          </div>
         </motion.div>
       </div>
     </>

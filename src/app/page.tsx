@@ -13,8 +13,16 @@ import {
 } from "@/components/ui/card";
 import { DarkGridHero } from "@/sections/DarkGridHero";
 import { NewHero } from "@/sections/NewHero";
+import { NewSwiper } from "@/sections/NewSwiper";
 import { features } from "@/data/features";
 import { pricing } from "@/data/pricing";
+import React from "react";
+import { Header } from "@/sections/Header";
+import { Faq } from "@/sections/Faq";
+import { Features } from "@/sections/Features";
+import { NewNav } from "@/sections/NewNav";
+import { ImageSlider } from "@/sections/ImageSlider";
+import { ScreenShots } from "@/sections/ScreenShots";
 import { CircleCheck } from "lucide-react";
 
 export const runtime = "edge";
@@ -22,9 +30,14 @@ export const runtime = "edge";
 export default function Home() {
   return (
     <>
-      {/* <DarkGridHero /> */}
-      {/* <NewHero /> */}
-      <div className="border-b border-border">
+      <NewHero />
+      <NewNav />
+      <Features />
+      <ScreenShots />
+      {/* <NewSwiper /> */}
+      {/* <ImageSlider /> */}
+      <Faq />
+      {/* <div className="border-b border-border">
         <main className="container mx-auto">
           <div className="relative md:mt-24 mx-auto w-full max-w-4xl pt-4 text-center">
             <div className="absolute top-0 -z-10 max-h-full max-w-screen-lg w-full h-full blur-2xl overflow-hidden">
@@ -45,11 +58,11 @@ export default function Home() {
             />
           </div>
         </main>
-      </div>
+      </div> */}
 
       {/* features */}
 
-      <section
+      {/* <section
         id="features"
         className="border-b border-border bg-gradient-to-b from-background to-transparent via-background via-90% relative"
       >
@@ -88,7 +101,7 @@ export default function Home() {
           <div className="absolute bottom-0 left-0 w-1/2 h-56 bg-violet-600 rounded-full mix-blend-multiply opacity-70 animate-blob filter blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-1/2 h-56 bg-sky-600 rounded-full mix-blend-multiply opacity-70 animate-blob delay-1000 filter blur-3xl"></div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }
