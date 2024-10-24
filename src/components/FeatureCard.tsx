@@ -36,7 +36,7 @@ export const FeatureCard = ({
   }, []);
 
   return (
-    <div className="relative border border-white/60 p-4 text-center rounded-sm sm:flex-1 dark:border-onyx-800 shadow-mdbl dark:shadow-big min-h-[320px]">
+    <div className="relative border border-primeBlue-50 p-4 text-center rounded-sm sm:flex-1 dark:border-onyx-800 shadow-mdbl dark:shadow-big min-h-[320px]">
       <motion.div
         ref={borderRef}
         className="absolute inset-0 border-2 border-primeBlue-400  rounded-sm"

@@ -8,14 +8,42 @@
   --swiper-navigation-top-offset: 90%;
 }
 
+/* .mySwiper2 {
+  display: flex !important;
+  justify-content: center !important;
+  background-color: red;
+  min-height: 400px;
+  overflow-y: visible !important;
+} */
+.mySwiper2 {
+  height: 12rem !important;
+  align-content: end;
+}
+
+.swiper {
+  overflow: clip !important;
+}
+
+.swiper-slide:not(.swiper-slide-active) {
+  opacity: 0.6 !important;
+  filter: grayscale(60%) !important;
+  transition: all 0.2s ease-in !important;
+  transition-property: all 0.2s ease-in !important;
+}
+
+.swiper-slide:not(.swiper-slide-active):hover {
+  opacity: 1 !important;
+  filter: grayscale(0%) !important;
+  transition: all 0.3s ease-in !important;
+  transition-property: all 0.3s ease-in !important;
+}
+
 .swiper {
   user-select: none;
   box-sizing: border-box;
   overflow: hidden;
   width: 100%;
-
   height: 100%;
-
   padding: 0px 0px;
 }
 
@@ -24,7 +52,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  height: auto;
   position: relative;
   box-sizing: border-box;
 }
