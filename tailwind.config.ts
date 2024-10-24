@@ -11,7 +11,6 @@ const config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}"
   ],
   prefix: "",
-  important: true,
   theme: {
     boxShadow: {
       sm: "box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",
@@ -146,10 +145,7 @@ const config = {
       }
     }
   },
-  plugins: [
-    require("tailwindcss-animate"),
-    require("tailwindcss-neumorphism-ui")
-  ]
+  plugins: [require("tailwindcss-animate")]
 } satisfies Config;
 
 export default config;
