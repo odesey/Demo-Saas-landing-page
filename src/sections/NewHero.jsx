@@ -64,7 +64,7 @@ export const NewHero = () => {
                   </div>
                 </a>
                 <a
-                  href="#benefits"
+                  href="/"
                   title="link to your page"
                   aria-label="your label"
                   className="mx-2 my-2 inline-flex items-center h-12 justify-center w-full sm:w-auto px-6 py-3 text-sm text-center shadow-mdbl dark:shadow-big duration-500 ease-in-out transform text-onyx-950-700 rounded-xl bg-primeBlue-50 border border-white dark:border-onyx-800 dark:bg-onyx-900"

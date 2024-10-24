@@ -17,7 +17,6 @@ import English from "@/public/images/English.png";
 import English2 from "@/public/images/English2.png";
 import French from "@/public/images/French.png";
 import Map from "@/public/images/Map.png";
-import MapDark from "@/public/images/MapDark.png";
 import MemberPermissions from "@/public/images/MemberPermissions.png";
 import MembersDirectory from "@/public/images/MembersDirectory.png";
 import NewCalendarEvent from "@/public/images/NewCalendarEvent.png";
@@ -32,29 +31,148 @@ import Spanish from "@/public/images/Spanish.png";
 import UserPrivacy from "@/public/images/UserPrivacy.png";
 
 export const images = [
-  { src: Anniversaries, alt: "Anniversaries Picture" },
-  { src: Announcements, alt: "Announcements Picture" },
-  { src: Birthdays, alt: "Birthdays Picture" },
-  { src: BroadcastNearbyChurches, alt: "Broadcast Nearby Churches Picture" },
-  { src: BulletinBoard, alt: "Bulletin Board Picture" },
-  { src: Calendar, alt: "Calendar Picture" },
-  { src: CommunityServices, alt: "Community Services Picture" },
-  { src: DeleteMember, alt: "Delete Member Picture" },
-  { src: English, alt: "English Picture" },
-  { src: English2, alt: "English2 Picture" },
-  { src: French, alt: "French Picture" },
-  { src: Map, alt: "Map Picture" },
-  { src: MapDark, alt: "Map Dark Picture" },
-  { src: MemberPermissions, alt: "Member Permissions Picture" },
-  { src: MembersDirectory, alt: "Members Directory Picture" },
-  { src: NewCalendarEvent, alt: "New Calendar Event Picture" },
-  { src: NotificationSettings, alt: "Notification Settings Picture" },
-  { src: Outreaches, alt: "Outreaches Picture" },
-  { src: Portugues, alt: "Portugues Picture" },
-  { src: PotluckDetails, alt: "Potluck Details Picture" },
-  { src: PotluckDishes, alt: "Potluck Dishes Picture" },
-  { src: Responsibilities, alt: "Responsibilities Picture" },
-  { src: SavedChurches, alt: "Saved Churches Picture" },
-  { src: Spanish, alt: "Spanish Picture" },
-  { src: UserPrivacy, alt: "User Privacy Picture" }
+  {
+    src: Anniversaries,
+    alt: "Anniversaries Picture",
+    cardTitle: "Anniversaries",
+    cardDescription: "short description will go here"
+  },
+  {
+    src: Announcements,
+    alt: "Announcements Picture",
+    cardTitle: "Announcements",
+    cardDescription: "short description will go here"
+  },
+  {
+    src: Birthdays,
+    alt: "Birthdays Picture",
+    cardTitle: "Birthdays",
+    cardDescription: "short description will go here"
+  },
+  {
+    src: BroadcastNearbyChurches,
+    alt: "Broadcast Nearby Churches Picture",
+    cardTitle: "BroadcastNearbyChurches",
+    cardDescription: "short description will go here"
+  },
+  {
+    src: BulletinBoard,
+    alt: "Bulletin Board Picture",
+    cardTitle: "BulletinBoard",
+    cardDescription: "short description will go here"
+  },
+  {
+    src: Calendar,
+    alt: "Calendar Picture",
+    cardTitle: "Calendar",
+    cardDescription: "short description will go here"
+  },
+  {
+    src: CommunityServices,
+    alt: "Community Services Picture",
+    cardTitle: "CommunityServices",
+    cardDescription: "short description will go here"
+  },
+  {
+    src: DeleteMember,
+    alt: "Delete Member Picture",
+    cardTitle: "DeleteMember",
+    cardDescription: "short description will go here"
+  },
+  {
+    src: English,
+    alt: "English Picture",
+    cardTitle: "English",
+    cardDescription: "short description will go here"
+  },
+  {
+    src: English2,
+    alt: "English2 Picture",
+    cardTitle: "English2",
+    cardDescription: "short description will go here"
+  },
+  {
+    src: French,
+    alt: "French Picture",
+    cardTitle: "French",
+    cardDescription: "short description will go here"
+  },
+  {
+    src: Map,
+    alt: "Map Picture",
+    cardTitle: "Map",
+    cardDescription: "short description will go here"
+  },
+  {
+    src: MemberPermissions,
+    alt: "Member Permissions Picture",
+    cardTitle: "MemberPermissions",
+    cardDescription: "short description will go here"
+  },
+  {
+    src: MembersDirectory,
+    alt: "Members Directory Picture",
+    cardTitle: "MembersDirectory",
+    cardDescription: "short description will go here"
+  },
+  {
+    src: NewCalendarEvent,
+    alt: "New Calendar Event Picture",
+    cardTitle: "NewCalendarEvent",
+    cardDescription: "short description will go here"
+  },
+  {
+    src: NotificationSettings,
+    alt: "Notification Settings Picture",
+    cardTitle: "NotificationSettings",
+    cardDescription: "short description will go here"
+  },
+  {
+    src: Outreaches,
+    alt: "Outreaches Picture",
+    cardTitle: "Outreaches",
+    cardDescription: "short description will go here"
+  },
+  {
+    src: Portugues,
+    alt: "Portugues Picture",
+    cardTitle: "Portugues",
+    cardDescription: "short description will go here"
+  },
+  {
+    src: PotluckDetails,
+    alt: "Potluck Details Picture",
+    cardTitle: "PotluckDetails",
+    cardDescription: "short description will go here"
+  },
+  {
+    src: PotluckDishes,
+    alt: "Potluck Dishes Picture",
+    cardTitle: "PotluckDishes",
+    cardDescription: "short description will go here"
+  },
+  {
+    src: Responsibilities,
+    alt: "Responsibilities Picture",
+    cardTitle: "Responsibilities",
+    cardDescription: "short description will go here"
+  },
+  {
+    src: SavedChurches,
+    alt: "Saved Churches Picture",
+    cardTitle: "SavedChurches",
+    cardDescription: "short description will go here"
+  },
+  {
+    src: Spanish,
+    alt: "Spanish Picture",
+    cardTitle: "Spanish",
+    cardDescription: "short description will go here"
+  },
+  {
+    src: UserPrivacy,
+    alt: "User Privacy Picture",
+    cardTitle: "UserPrivacy",
+    cardDescription: "short description will go here"
+  }
 ];
