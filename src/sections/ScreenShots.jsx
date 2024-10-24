@@ -102,7 +102,7 @@ export const ScreenShots = () => {
           </div>
           <div className="flex relative -top-24">
             <button onClick={handlePrev}>
-              <Prev className="size-10 fill-primeBlue-500 absolute z-50 bottom-32 -left-4 dark:fill-onyx-600" />
+              <Prev className="size-10 fill-primeBlue-500 absolute z-50 bottom-32 -left-4 dark:fill-onyx-600 md:bottom-24" />
             </button>
 
             <Swiper
@@ -149,8 +149,8 @@ export const ScreenShots = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
-            <button onClick={handleNext}>
-              <Next className="size-10 fill-primeBlue-500 absolute z-50 bottom-32 -right-4 dark:fill-onyx-600" />
+            <button onClick={handleNext} className="bg-red-600">
+              <Next className="size-10 fill-primeBlue-500 absolute z-50 bottom-32 -right-4 dark:fill-onyx-600 md:bottom-24" />
             </button>
           </div>
         </div>
