@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 import Image from "next/image";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,18 +15,29 @@ import {
 
 import { ScreenshotCard } from "@/components/ScreenshotCard";
 import { images } from "@/lib/images";
+import Next from "@/public/chevron-right.svg";
+import Prev from "@/public/chevron-left.svg";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 export const ScreenShots = () => {
   const [firstSwiper, setFirstSwiper] = useState(null);
   const [secondSwiper, setSecondSwiper] = useState(null);
 
+  const swiperRef = useRef(null);
+
+  const handlePrev = useCallback(() => {
+    swiperRef.current.swiper.slidePrev();
+  }, [swiperRef]);
+
+  const handleNext = useCallback(() => {
+    swiperRef.current.swiper.slideNext();
+  }, [swiperRef]);
+
   const swiperParameters = {
-    modules: [A11y, EffectCoverflow, Keyboard, Navigation, Controller],
+    modules: [A11y, EffectCoverflow, Keyboard, Controller],
     onSwiper: setFirstSwiper,
     longSwipes: false,
     controller: { control: secondSwiper },
@@ -38,11 +49,6 @@ export const ScreenShots = () => {
     effect: "coverflow",
     coverflowEffect: { slideShadows: false, scale: 0.8 },
     speed: 500,
-    navigation: {
-      enabled: true,
-      prevEl: ".swiper-button-prev",
-      nextEl: ".swiper-button-next"
-    },
     keyboard: { enabled: true },
     watchSlidesProgress: true,
     observer: true,
@@ -54,7 +60,6 @@ export const ScreenShots = () => {
         centeredSlides: true,
         loopAdditionalSlides: 2,
         speed: 500,
-        navigation: { enabled: false },
         resistanceRatio: 0.85
       },
       1280: {
@@ -62,7 +67,6 @@ export const ScreenShots = () => {
         centeredSlides: true,
         loopAdditionalSlides: 2,
         speed: 500,
-        navigation: { enabled: false },
         resistanceRatio: 0.85
       }
     }
@@ -97,7 +101,12 @@ export const ScreenShots = () => {
             </Swiper>
           </div>
           <div className="flex relative -top-24">
+            <button onClick={handlePrev}>
+              <Prev className="size-10 fill-primeBlue-500 absolute z-50 bottom-32 -left-4 dark:fill-onyx-600" />
+            </button>
+
             <Swiper
+              ref={swiperRef}
               className="mySwiper2"
               autoHeight
               breakpoints={{
@@ -107,7 +116,6 @@ export const ScreenShots = () => {
                   centeredSlides: true,
                   loopAdditionalSlides: 2,
                   speed: 500,
-                  navigation: { enabled: false },
                   resistanceRatio: 0.85
                 },
                 1280: {
@@ -115,7 +123,6 @@ export const ScreenShots = () => {
                   centeredSlides: true,
                   loopAdditionalSlides: 2,
                   speed: 500,
-                  navigation: { enabled: false },
                   resistanceRatio: 0.85
                 }
               }}
@@ -142,6 +149,9 @@ export const ScreenShots = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
+            <button onClick={handleNext}>
+              <Next className="size-10 fill-primeBlue-500 absolute z-50 bottom-32 -right-4 dark:fill-onyx-600" />
+            </button>
           </div>
         </div>
       </div>
