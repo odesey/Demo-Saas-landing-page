@@ -8,13 +8,6 @@
   --swiper-navigation-top-offset: 90%;
 }
 
-/* .mySwiper2 {
-  display: flex !important;
-  justify-content: center !important;
-  background-color: red;
-  min-height: 400px;
-  overflow-y: visible !important;
-} */
 .mySwiper2 {
   height: 12rem !important;
   align-content: end;
