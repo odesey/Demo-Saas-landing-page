@@ -17,9 +17,9 @@ import { ScreenshotCard } from "@/components/ScreenshotCard";
 import { images } from "@/lib/images";
 
 import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+// import "swiper/css/effect-coverflow";
+// import "swiper/css/pagination";
+// import "swiper/css/navigation";
 
 export const ScreenShots = () => {
   const [firstSwiper, setFirstSwiper] = useState(null);
