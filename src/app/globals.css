@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 .mySwiper2 {
-  height: 12rem !important;
-  align-content: end;
+  height: 16rem !important;
+  align-content: center;
 }
 
 .swiper {
