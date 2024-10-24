@@ -84,6 +84,9 @@ export const NewNav = () => {
               </nav>
             </div>
             <div className="flex gap-4 items-top">
+              <div className="flex items-top ">
+                <ThemeChanger />
+              </div>
               {/* <ThemeChanger /> */}
               {/* <Button>Join waitlist</Button> */}
               <div ref={ref} className="md:hidden">
@@ -137,9 +140,9 @@ export const NewNav = () => {
               {/* <MenuIcon className="w-8 h-8 md:hidden" /> */}
             </div>
           </motion.div>
-          <div className="flex items-top ml-3 mt-[14px] ">
+          {/* <div className="flex items-top ml-3 mt-[14px] ">
             <ThemeChanger />
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </>

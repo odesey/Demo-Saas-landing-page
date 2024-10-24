@@ -32,52 +32,42 @@ import UserPrivacy from "@/public/images/UserPrivacy.png";
 
 export const images = [
   {
-    src: Anniversaries,
-    alt: "Anniversaries Picture",
-    cardTitle: "Anniversaries",
-    cardDescription: "short description will go here"
-  },
-  {
     src: Announcements,
     alt: "Announcements Picture",
     cardTitle: "Announcements",
-    cardDescription: "short description will go here"
-  },
-  {
-    src: Birthdays,
-    alt: "Birthdays Picture",
-    cardTitle: "Birthdays",
-    cardDescription: "short description will go here"
+    cardDescription:
+      "Keep your congregation and community up to date on church activities"
   },
   {
     src: BroadcastNearbyChurches,
     alt: "Broadcast Nearby Churches Picture",
-    cardTitle: "BroadcastNearbyChurches",
-    cardDescription: "short description will go here"
+    cardTitle: "Contact Nearby Churches",
+    cardDescription: "Send messages to nearby churches"
   },
   {
     src: BulletinBoard,
     alt: "Bulletin Board Picture",
-    cardTitle: "BulletinBoard",
-    cardDescription: "short description will go here"
+    cardTitle: "Bulletin Board",
+    cardDescription: "Messages from other churches will be posted here"
   },
   {
     src: Calendar,
     alt: "Calendar Picture",
     cardTitle: "Calendar",
-    cardDescription: "short description will go here"
+    cardDescription: "Church events will be synced with members phone calendars"
   },
   {
     src: CommunityServices,
     alt: "Community Services Picture",
-    cardTitle: "CommunityServices",
-    cardDescription: "short description will go here"
+    cardTitle: "Community Services",
+    cardDescription:
+      "Let your community know how your church can be a blessing to them"
   },
   {
     src: DeleteMember,
     alt: "Delete Member Picture",
-    cardTitle: "DeleteMember",
-    cardDescription: "short description will go here"
+    cardTitle: "Digital Disfellowship",
+    cardDescription: "For the Judases in your congregation"
   },
   {
     src: English,
@@ -86,93 +76,90 @@ export const images = [
     cardDescription: "short description will go here"
   },
   {
-    src: English2,
-    alt: "English2 Picture",
-    cardTitle: "English2",
-    cardDescription: "short description will go here"
-  },
-  {
     src: French,
     alt: "French Picture",
-    cardTitle: "French",
-    cardDescription: "short description will go here"
+    cardTitle: "Français",
+    cardDescription: "GenesisApp prend en charge la langue espagnole"
   },
   {
     src: Map,
     alt: "Map Picture",
     cardTitle: "Map",
-    cardDescription: "short description will go here"
+    cardDescription: "Find churches in your area, or where your are visiting"
   },
   {
     src: MemberPermissions,
     alt: "Member Permissions Picture",
-    cardTitle: "MemberPermissions",
-    cardDescription: "short description will go here"
+    cardTitle: "Member Permissions",
+    cardDescription: "Delegate permissions to members"
   },
   {
     src: MembersDirectory,
     alt: "Members Directory Picture",
-    cardTitle: "MembersDirectory",
-    cardDescription: "short description will go here"
+    cardTitle: "Members Directory",
+    cardDescription:
+      "Including birthdays, anniversaries and roles and responsibilities"
   },
   {
     src: NewCalendarEvent,
     alt: "New Calendar Event Picture",
-    cardTitle: "NewCalendarEvent",
-    cardDescription: "short description will go here"
+    cardTitle: "New Calendar Event",
+    cardDescription: "Create new entries on the church calendar"
   },
   {
     src: NotificationSettings,
     alt: "Notification Settings Picture",
-    cardTitle: "NotificationSettings",
-    cardDescription: "short description will go here"
+    cardTitle: "Notification Settings",
+    cardDescription: "You control how and when you are notified"
   },
   {
     src: Outreaches,
     alt: "Outreaches Picture",
     cardTitle: "Outreaches",
-    cardDescription: "short description will go here"
+    cardDescription: "Keep track of evangelistic leads in your community"
   },
   {
     src: Portugues,
     alt: "Portugues Picture",
-    cardTitle: "Portugues",
-    cardDescription: "short description will go here"
+    cardTitle: "Português",
+    cardDescription: "GenesisApp suporta idioma espanhol"
   },
   {
     src: PotluckDetails,
     alt: "Potluck Details Picture",
-    cardTitle: "PotluckDetails",
-    cardDescription: "short description will go here"
+    cardTitle: "Potluck Details",
+    cardDescription: "Potluck details are available to members of your church"
   },
   {
     src: PotluckDishes,
     alt: "Potluck Dishes Picture",
-    cardTitle: "PotluckDishes",
-    cardDescription: "short description will go here"
+    cardTitle: "Potluck Dishes",
+    cardDescription:
+      "Potluck is now pot-managed. See who's bringing what to the fellowship meal"
   },
   {
     src: Responsibilities,
     alt: "Responsibilities Picture",
     cardTitle: "Responsibilities",
-    cardDescription: "short description will go here"
+    cardDescription: "Find out who does what in your church"
   },
   {
     src: SavedChurches,
     alt: "Saved Churches Picture",
-    cardTitle: "SavedChurches",
-    cardDescription: "short description will go here"
+    cardTitle: "Saved Churches",
+    cardDescription: "Bookmark churches your frequently interact with"
   },
   {
     src: Spanish,
     alt: "Spanish Picture",
-    cardTitle: "Spanish",
-    cardDescription: "short description will go here"
+    cardTitle: "Español",
+    cardDescription: "GenesisApp soporta el idioma español."
   },
   {
     src: UserPrivacy,
     alt: "User Privacy Picture",
-    cardTitle: "UserPrivacy",
-    cardDescription: "short description will go here"
+    cardTitle: "User Privacy",
+    cardDescription:
+      "Complete control of your privacy. Choose what is shared with other members of your church"
   }
 ];

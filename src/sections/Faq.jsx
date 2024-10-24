@@ -56,7 +56,7 @@ const faq = [
 export const Faq = () => {
   return (
     <section>
-      <div className="px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-7xl lg:pt-56">
+      <div className="px-8 mx-auto md:px-12 lg:px-32 max-w-7xl lg:pt-20">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
           <div>
             <h1 className="pb-2 text-4xl font-normal tracking-tight text-transparent bg-gradient-to-r from-primeBlue-200 via-primeBlue-300 to-primeBlue-500 bg-clip-text font-display lg:text-6xl">
