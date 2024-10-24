@@ -39,7 +39,7 @@ export const NewNav = () => {
             animate={isOpen ? "open" : "closed"}
             variants={variants}
             transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
-            className="flex sm:justify-between backdrop-blur-xl backdrop-filter dark:bg-onyx-900/60 border dark:border-onyx-800 border-primeBlue-100 md:flex-row md:items-center md:justify-between mx-auto p-2 relative lg:rounded-2xl rounded-xl shadow-mdbl dark:shadow-massive w-full "
+            className="flex justify-between md:justify-around backdrop-blur-xl backdrop-filter dark:bg-onyx-900/60 border dark:border-onyx-800 border-primeBlue-100 md:flex-row md:items-center mx-auto p-2 relative lg:rounded-2xl rounded-xl shadow-mdbl dark:shadow-massive w-full "
           >
             <div className="items-top flex flex-row justify-between md:justify-start sm:pt-1">
               <a
@@ -49,7 +49,7 @@ export const NewNav = () => {
                 <Logo className="size-8" />
               </a>
             </div>
-            <div className="flex space-x-1 hidden md:block">
+            <div className="space-x-1 hidden md:block">
               <nav className="flex lg:gap-6 text-sm md:gap-2">
                 {tabs.map((tab) => (
                   <button
@@ -83,13 +83,20 @@ export const NewNav = () => {
                 ))}
               </nav>
             </div>
-            <div className="flex gap-4 items-top">
-              <div className="flex items-top ">
+            <div
+              // className={`${
+              //   isOpen
+              //     ? "align-top justify-start items-start pt-1"
+              //     : "align-middle justify-center items-center"
+              // } flex relative gap-4`}
+              className="flex relative gap-4 align-top justify-start items-start"
+            >
+              <div className="justify-self-end pt-1 md:pt-0">
                 <ThemeChanger />
               </div>
               {/* <ThemeChanger /> */}
               {/* <Button>Join waitlist</Button> */}
-              <div ref={ref} className="md:hidden">
+              <div ref={ref} className="md:hidden justify-self-end">
                 <Hamburger toggled={isOpen} size={20} toggle={setOpen} />
                 <AnimatePresence>
                   {isOpen && (

@@ -70,12 +70,6 @@ export const images = [
     cardDescription: "For the Judases in your congregation"
   },
   {
-    src: English,
-    alt: "English Picture",
-    cardTitle: "English",
-    cardDescription: "short description will go here"
-  },
-  {
     src: French,
     alt: "French Picture",
     cardTitle: "Français",
@@ -85,7 +79,7 @@ export const images = [
     src: Map,
     alt: "Map Picture",
     cardTitle: "Map",
-    cardDescription: "Find churches in your area, or where your are visiting"
+    cardDescription: "Find churches in your area, or where ever you are"
   },
   {
     src: MemberPermissions,
@@ -147,7 +141,7 @@ export const images = [
     src: SavedChurches,
     alt: "Saved Churches Picture",
     cardTitle: "Saved Churches",
-    cardDescription: "Bookmark churches your frequently interact with"
+    cardDescription: "Bookmark churches you frequently interact with"
   },
   {
     src: Spanish,
