@@ -57,6 +57,7 @@
     "react-resizable-panels": "^2.0.16",
     "react-use": "^17.5.1",
     "react-use-measure": "^2.1.1",
+    "sharp": "^0.33.5",
     "sonner": "^1.4.41",
     "swiper": "^11.1.14",
     "tailwindcss-animate": "^1.0.7",
