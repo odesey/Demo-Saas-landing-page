@@ -5,6 +5,12 @@ import React from "react";
 import { ThemeProvider } from "@/app/theme-provider";
 import Footer from "@/components/layout/Footer";
 import ActiveSectionProvider from "@/context/active-section";
+
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/effect-cube";
+import "swiper/css/navigation";
+
 const font = Mulish({ subsets: ["latin"] });
 
 export const runtime = "edge";
