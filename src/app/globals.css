@@ -53,8 +53,8 @@
 .mainSwiper .swiper-slide:not(.swiper-slide-active) {
   opacity: 0.6 !important;
   filter: grayscale(60%) !important;
-  /* transition: all 0.2s ease-in !important; */
-  /* transition-property: all 0.2s ease-in !important; */
+  /* transition: all 0.3s ease-in !important; */
+  /* transition-property: all 0.3s ease-in !important; */
 }
 
 .mainSwiper .swiper-slide:not(.swiper-slide-active):hover {
@@ -135,8 +135,13 @@
 
 @media (min-width: 375px) {
   .swiper-slide img {
-    width: 100%;
+    width: 70%;
     height: 100%;
+  }
+
+  .mySwiper.swiper {
+    width: 240px;
+    height: 180px;
   }
 }
 

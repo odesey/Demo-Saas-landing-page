@@ -152,8 +152,7 @@ export const images = [
   {
     src: UserPrivacy,
     alt: "User Privacy Picture",
-    cardTitle: "User Privacy",
-    cardDescription:
-      "Complete control of your privacy. Choose what is shared with other members of your church"
+    cardTitle: "Member Privacy",
+    cardDescription: "Choose what is shared with your fellow church members"
   }
 ];
