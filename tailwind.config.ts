@@ -4,6 +4,9 @@ const colors = require("tailwindcss/colors");
 
 const config = {
   darkMode: ["class"],
+  future: {
+    hoverOnlyWhenSupported: true
+  },
   content: [
     "./src/sections/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",

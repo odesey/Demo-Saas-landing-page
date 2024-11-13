@@ -4,6 +4,8 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { HeaderGrid } from "@/sections/HeaderGrid";
 import { FeatureCard } from "@/components/FeatureCard";
+import { FeatureCard2 } from "@/components/FeatureCard2";
+import { useInView } from "react-intersection-observer";
 
 import Announcements from "@/assets/bullhorn.svg";
 import Bible from "@/assets/book-bible.svg";
@@ -14,8 +16,9 @@ import Members from "@/assets/users.svg";
 import Messages from "@/assets/messages.svg";
 import Permissions from "@/assets/users-gear.svg";
 import Plate from "@/assets/plate-utensils.svg";
+import { useSectionInView } from "@/lib/hooks";
 
-const ICON_CLASS = "size-7 inline-flex justify-center items-center";
+const ICON_CLASS = "size-12 inline-flex justify-center items-center";
 
 const features = [
   {
@@ -23,69 +26,80 @@ const features = [
     description:
       "Let the congregation, community and other churches know what is going on at your church.",
     dataAos: "fade-right",
-    icon: <Announcements className={ICON_CLASS} />
+    icon: <Announcements className={ICON_CLASS} />,
+    src: Announcements
   },
   {
     title: "Broadcasts",
     description:
-      "Send messages to nearby churches. Invite them to attend and support programs being offered by your church.",
+      "Communicate with nearby churches. Invite them to attend and support programs being offered by your church.",
     dataAos: "fade-left",
-    icon: <Broadcast className={ICON_CLASS} />
+    icon: <Broadcast className={ICON_CLASS} />,
+    src: Broadcast
   },
   {
     title: "Calendar",
     description:
       "Add upcoming church events to the calendar. GenesisApp will automatically sync phone calendars of all members.",
     dataAos: "fade-down",
-    icon: <Calendar className={ICON_CLASS} />
+    icon: <Calendar className={ICON_CLASS} />,
+    src: Calendar
   },
   {
     title: "Community Services",
     description:
       "Let your community know how your church can be a blessing to them.",
     dataAos: "fade-left",
-    icon: <CommunityService className={ICON_CLASS} />
+    icon: <CommunityService className={ICON_CLASS} />,
+    src: CommunityService
   },
   {
     title: "Members Directory",
     description:
       "List of members, including birthdays, anniversaries and roles within the church.",
     dataAos: "fade-right",
-    icon: <Members className={ICON_CLASS} />
+    icon: <Members className={ICON_CLASS} />,
+    src: Members
   },
   {
     title: "Messages",
     description:
       "Anyone in the world can now send your church a message. Members with the delegated permission can respond.",
     dataAos: "fade-up",
-    icon: <Messages className={ICON_CLASS} />
+    icon: <Messages className={ICON_CLASS} />,
+    src: Messages
   },
   {
     title: "Outreach",
     description:
       "Keep track of leads within your community and assign members to follow-up with them.",
     dataAos: "fade-left",
-    icon: <Bible className={ICON_CLASS} />
+    icon: <Bible className={ICON_CLASS} />,
+    src: Bible
   },
   {
     title: "Permissions",
     description:
       "Roles and permissions can be delegated to members in GenessisApp.",
     dataAos: "fade-left",
-    icon: <Permissions className={ICON_CLASS} />
+    icon: <Permissions className={ICON_CLASS} />,
+    src: Permissions
   },
   {
     title: "Potluck",
     description:
-      "Turn pot-luck into pot-managed. Now all members can collaborate on dishes for the next fellowship meal.",
+      "Turn pot-luck into pot-managed. Now all members can communicate on dishes for the next fellowship meal.",
     dataAos: "fade-left",
-    icon: <Plate className={ICON_CLASS} />
+    icon: <Plate className={ICON_CLASS} />,
+    src: Plate
   }
 ];
 
 export const Features = () => {
+  const { ref } = useSectionInView("#features");
+
   return (
-    <section className="overflow relative">
+    <section ref={ref} className="relative scroll-mt-24 " id="features">
       <div className="container">
         <div
           className="text-center max-w-3xl lg:mx-auto"
@@ -104,6 +118,7 @@ export const Features = () => {
               title={feature.title}
               description={feature.description}
               icon={feature.icon}
+              src={feature.src}
             />
             // <div
             //   key={feature.title}
