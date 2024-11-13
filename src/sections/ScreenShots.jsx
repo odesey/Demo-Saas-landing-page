@@ -40,56 +40,16 @@ export const ScreenShots = () => {
     swiperRef.current.swiper.slideNext();
   }, [swiperRef]);
 
-  // const swiperParameters = {
-  //   modules: [A11y, EffectCoverflow, Keyboard, Controller],
-  //   onSwiper: setFirstSwiper,
-  //   longSwipes: false,
-  //   controller: { control: secondSwiper },
-  //   centeredSlides: true,
-  //   grabCursor: true,
-  //   slideToClickedSlide: true,
-  //   // loop: true,
-  //   loopAdditionalSlides: 2,
-  //   effect: "coverflow",
-  //   coverflowEffect: { slideShadows: false },
-  //   speed: 500,
-  //   keyboard: { enabled: true },
-  //   watchSlidesProgress: true,
-  //   observer: true,
-  //   observeParents: true,
-  //   resistanceRatio: 0.5,
-  //   breakpoints: {
-  //     // 475:
-  //     // 640
-  //     768: {
-  //       slidesPerView: 2,
-  //       centeredSlides: true,
-  //       loopAdditionalSlides: 2,
-  //       speed: 500,
-  //       resistanceRatio: 0.85
-  //     },
-  //     // 1024:
-  //     1280: {
-  //       slidesPerView: 3,
-  //       centeredSlides: true,
-  //       loopAdditionalSlides: 2,
-  //       speed: 500,
-  //       resistanceRatio: 0.85
-  //     }
-  //     // 1536:
-  //   }
-  // };
-
   const { ref } = useSectionInView("#screenshots");
 
   const swiperParameters = {
+    longSwipes: false,
     modules: [A11y, Controller, EffectCoverflow, Keyboard],
     centeredSlides: true,
     grabCursor: true,
     slideToClickedSlide: true,
     controller: { control: firstSwiper },
     onSwiper: setSecondSwiper,
-    // loop: true,
     effect: "coverflow",
     coverflowEffect: {
       depth: 300,
@@ -135,41 +95,10 @@ export const ScreenShots = () => {
       id="screenshots"
     >
       <div className="container  ">
-        {/* navigation */}
-        {/* <nav className="my-10">
-          <ul className="flex gap-4">
-            {images.map((image, index) => (
-              <li key={index}>
-                <button
-                  onClick={() => {
-                    swiper.slideTo(index);
-                    // setShowNavigation(false)
-                  }}
-                  className="relative block h-20 w-20 overflow-hidden rounded-lg"
-                >
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    className="block h-full w-full object-cover"
-                  />
-                </button>
-              </li>
-            ))}
-          </ul>
-        </nav> */}
         <div className="flex flex-col">
           {/* Main slides */}
           <div className="flex relative">
-            <Swiper
-              className="mainSwiper"
-              {...swiperParameters}
-              // effect={"coverflow"}
-              // coverflowEffect={{ slideShadows: false }}
-              // modules={[A11y, EffectCoverflow, Keyboard, Controller]}
-              // spaceBetween={10}
-              // onSwiper={setSwiper}
-              // className=""
-            >
+            <Swiper className="mainSwiper" {...swiperParameters}>
               {images.map((image, index) => (
                 <SwiperSlide key={index} className="">
                   <div className="flex items-center justify-center rounded-full bg-transparent">
@@ -223,14 +152,11 @@ export const ScreenShots = () => {
             >
               {images.map((image, index) => (
                 <SwiperSlide key={index}>
-                  {({ isActive }) => (
-                    <ScreenshotCard
-                      isActive={isActive}
-                      description={image.cardDescription}
-                      title={image.cardTitle}
-                      className="w-[240px] h-[10px]"
-                    />
-                  )}
+                  <ScreenshotCard
+                    description={image.cardDescription}
+                    title={image.cardTitle}
+                    className="w-[240px] h-[10px]"
+                  />
                 </SwiperSlide>
               ))}
             </Swiper>
