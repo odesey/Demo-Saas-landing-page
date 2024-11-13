@@ -18,10 +18,10 @@ import Next from "@/public/chevron-right.svg";
 import Prev from "@/public/chevron-left.svg";
 import { useSectionInView } from "@/lib/hooks";
 
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/effect-cube";
-import "swiper/css/navigation";
+// import "swiper/css";
+// import "swiper/css/effect-coverflow";
+// import "swiper/css/effect-cube";
+// import "swiper/css/navigation";
 
 export const ScreenShots = () => {
   const [swiper, setSwiper] = useState(null);
@@ -75,18 +75,33 @@ export const ScreenShots = () => {
     }
   };
 
-  // const swiperCubeParameters = {
-  //   modules: [A11y, EffectCube, Keyboard],
-  //   grabCursor: true,
-  //   loop: true,
-  //   effect: "cube",
-  //   cubeEffect: { slideShadows: false, shadowOffset: 50 },
-  //   speed: 800,
-  //   keyboard: { enabled: true },
-  //   watchSlidesProgress: true,
-  //   observer: true,
-  //   observeParents: true
-  // };
+  const swiperCubeParameters = {
+    longSwipes: false,
+    modules: [A11y, Controller, EffectCube, Keyboard],
+    centeredSlides: true,
+    grabCursor: true,
+    controller: { control: secondSwiper },
+    onSwiper: setFirstSwiper,
+    effect: "cube",
+    cubeEffect: { slideShadows: false, shadowOffset: 50 },
+    speed: 500,
+    keyboard: { enabled: true },
+    watchSlidesProgress: true,
+    observer: true,
+    observeParents: true,
+    cubeEffect: {
+      shadow: false,
+      slideShadows: false,
+      shadowOffset: 0,
+      shadowScale: 0.8
+    },
+    navigation: {
+      enabled: true,
+      prevEl: ".swiper-button-prev",
+      nextEl: ".swiper-button-next"
+    },
+    className: "mySwiper"
+  };
 
   return (
     <section
@@ -109,7 +124,7 @@ export const ScreenShots = () => {
                       sizes="(min-width: 1620px) 1360px, (min-width: 900px) 660px, (min-width: 660px) calc(18.18vw + 500px), (min-width: 380px) 340px, 260px"
                       src={image.src}
                       alt={image.alt}
-                      className="block h-full w-full bg-primeBlue-100 bg-opacity-10 object-cover"
+                      className="block h-full w-full bg-primeBlue-100 bg-opacity-10 object-contain"
                     />
                   </div>
                 </SwiperSlide>
@@ -119,50 +134,53 @@ export const ScreenShots = () => {
           <div className="flex relative mt-2 items-center justify-center align-middle">
             <button
               onClick={handlePrev}
-              className="flex absolute -left-2 md:left-40 lg:left-96"
+              className="flex absolute -left-4 md:left-40 lg:left-96"
             >
               <Prev className="md:size-16 lg:size-20 size-12 fill-primeBlue-500 z-50 dark:fill-onyx-600" />
             </button>
             <Swiper
               ref={swiperRef}
-              effect={"cube"}
-              controller={{ control: secondSwiper }}
-              onSwiper={setFirstSwiper}
-              grabCursor
-              speed={500}
-              watchSlidesProgress
-              cubeEffect={{
-                shadow: false,
-                slideShadows: false,
-                shadowOffset: 0,
-                shadowScale: 0.8
-              }}
-              navigation={{
-                enabled: true,
-                prevEl: ".swiper-button-prev",
-                nextEl: ".swiper-button-next"
-              }}
-              modules={[A11y, Controller, EffectCube]}
-              className="mySwiper"
-              style={{
-                userSelect: "none",
-                boxSizing: "border-box",
-                overflow: "visible"
-              }}
+              {...swiperCubeParameters}
+              // effect={"cube"}
+              // controller={{ control: secondSwiper }}
+              // onSwiper={setFirstSwiper}
+              // grabCursor
+              // speed={500}
+              // watchSlidesProgress
+              // cubeEffect={{
+              //   shadow: false,
+              //   slideShadows: false,
+              //   shadowOffset: 0,
+              //   shadowScale: 0.8
+              // }}
+              // navigation={{
+              //   enabled: true,
+              //   prevEl: ".swiper-button-prev",
+              //   nextEl: ".swiper-button-next"
+              // }}
+              // modules={[A11y, Controller, EffectCube]}
+              // className="mySwiper"
+              style={
+                {
+                  // userSelect: "none",
+                  // boxSizing: "border-box",
+                  // overflow: "visible"
+                }
+              }
             >
               {images.map((image, index) => (
                 <SwiperSlide key={index}>
                   <ScreenshotCard
                     description={image.cardDescription}
                     title={image.cardTitle}
-                    className="w-[240px] h-[10px]"
+                    className="w-[240px] h-[10px] lg:w-72"
                   />
                 </SwiperSlide>
               ))}
             </Swiper>
             <button
               onClick={handleNext}
-              className="absolute -right-2 md:right-40 lg:right-96"
+              className="absolute -right-4 md:right-40 lg:right-96"
             >
               <Next className="md:size-16 lg:size-20 size-12 fill-primeBlue-500 z-50 dark:fill-onyx-600" />
             </button>
