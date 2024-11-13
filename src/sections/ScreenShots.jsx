@@ -18,15 +18,12 @@ import Next from "@/public/chevron-right.svg";
 import Prev from "@/public/chevron-left.svg";
 import { useSectionInView } from "@/lib/hooks";
 
-// import "swiper/css";
-// import "swiper/css/effect-coverflow";
-// import "swiper/css/effect-cube";
-// import "swiper/css/navigation";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/effect-cube";
+import "swiper/css/navigation";
 
 export const ScreenShots = () => {
-  const [swiper, setSwiper] = useState(null);
-  const [showNavigation, setShowNavigation] = useState(false);
-
   const [firstSwiper, setFirstSwiper] = useState(null);
   const [secondSwiper, setSecondSwiper] = useState(null);
 
@@ -141,25 +138,6 @@ export const ScreenShots = () => {
             <Swiper
               ref={swiperRef}
               {...swiperCubeParameters}
-              // effect={"cube"}
-              // controller={{ control: secondSwiper }}
-              // onSwiper={setFirstSwiper}
-              // grabCursor
-              // speed={500}
-              // watchSlidesProgress
-              // cubeEffect={{
-              //   shadow: false,
-              //   slideShadows: false,
-              //   shadowOffset: 0,
-              //   shadowScale: 0.8
-              // }}
-              // navigation={{
-              //   enabled: true,
-              //   prevEl: ".swiper-button-prev",
-              //   nextEl: ".swiper-button-next"
-              // }}
-              // modules={[A11y, Controller, EffectCube]}
-              // className="mySwiper"
               style={
                 {
                   // userSelect: "none",
@@ -184,8 +162,6 @@ export const ScreenShots = () => {
             >
               <Next className="md:size-16 lg:size-20 size-12 fill-primeBlue-500 z-50 dark:fill-onyx-600" />
             </button>
-            {/* <div className="swiper-button-prev" />
-            <div className="swiper-button-next" /> */}
           </div>
         </div>
       </div>
