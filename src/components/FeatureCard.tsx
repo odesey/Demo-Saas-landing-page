@@ -36,7 +36,7 @@ export const FeatureCard = ({
   }, []);
 
   return (
-    <div className="relative border border-primeBlue-50 px-4 pt-2 pb-4 text-center rounded-sm sm:flex-1 dark:border-onyx-800 shadow-mdbl dark:shadow-big min-h-[250px] md:min-h-[300px]">
+    <div className="relative border border-primeBlue-50 px-4 py-2 text-center rounded-sm sm:flex-1 dark:border-onyx-800 shadow-mdbl dark:shadow-big min-h-[260px] md:min-h-[300px]">
       <motion.div
         ref={borderRef}
         className="absolute inset-0 border-2 border-primeBlue-400  rounded-sm"
@@ -44,13 +44,15 @@ export const FeatureCard = ({
           maskImage
         }}
       ></motion.div>
-      <div className="inline-flex size-16 justify-center items-center dark:fill-white">
+      <div className="my-4 inline-flex size-16 justify-center items-center dark:fill-white">
         {icon}
       </div>
-      <h3 className="mt-2 text-xl font-medium text-onyx-700 dark:text-onyx-100">
+      <h3 className="mb-6 mx-4 text-2xl font-bold text-onyx-700 dark:text-onyx-100">
         {title}
       </h3>
-      <p className="mt-4 dark:text-onyx-300 text-onyx-500">{description}</p>
+      <p className="m-4 dark:text-onyx-300 text-onyx-500 text-lg">
+        {description}
+      </p>
     </div>
   );
 };

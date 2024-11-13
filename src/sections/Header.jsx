@@ -28,7 +28,7 @@ export const Header = () => {
     <header className="py-4 border-none sticky top-0 z-50">
       <div className="absolute inset-0  -z-10 "></div>
       <div className="container">
-        <motion.div className="flex border rounded-full max-w-2xl mx-auto relative shadow-[0_10px_20px_rgba(_40,149,_255,_0.6)]">
+        <motion.div className="flex border rounded-full max-w-3xl mx-auto relative shadow-[0_10px_20px_rgba(_40,149,_255,_0.6)]">
           <div className="flex backdrop-blur-md rounded-full mx-auto  w-full justify-between items-center relative md:p-2.5">
             <div>
               <div className="border w-10 h-10 rounded-lg inline-flex justify-center items-center border-white/15">

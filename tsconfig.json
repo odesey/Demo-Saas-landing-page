@@ -22,12 +22,15 @@
     }
   },
   "include": [
+    "svgr.d.ts",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.jsx",
     ".next/types/**/*.ts",
-    "src/components/layout/Navbar.tsx"
+    "src/components/layout/Navbar.tsx",
+    "src/context/active-section.js",
+    "src/components/ScreenshotCard.sx"
   ],
   "exclude": ["node_modules"]
 }
