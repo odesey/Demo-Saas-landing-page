@@ -5,7 +5,6 @@ import { Features } from "@/sections/Features";
 import { NewNav } from "@/sections/NewNav";
 import TabsFeatures from "@/sections/TabsFeatures";
 import Nav3 from "@/sections/Nav3";
-import { GlassNavigation } from "@/sections/GlassNavigation";
 import { ScreenShots } from "@/sections/ScreenShots";
 import Carousel from "@/sections/Carousel";
 
