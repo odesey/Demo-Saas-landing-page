@@ -1,9 +1,16 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useMotionValueEvent,
+  useScroll
+} from "framer-motion";
 import { useClickAway } from "react-use";
 import { Squash as Hamburger } from "hamburger-react";
+import { useMediaQuery } from "react-responsive";
+
 import { ThemeChanger } from "@/app/Theme-changer";
 import { routes } from "@/data/routes";
 import Logo from "@/assets/logo.svg";
@@ -19,7 +26,6 @@ let tabs = [
 ];
 
 export const NewNav = () => {
-  // const { activeTab, setActiveTab } = useActiveSectionContext();
   const { activeTab, setActiveTab, setLastClickedTime } =
     useActiveSectionContext();
 
@@ -30,10 +36,28 @@ export const NewNav = () => {
   // const ref = useRef(null);
   // useClickAway(ref, () => setOpen(false));
   // let [activeTab, setActiveTab] = useState(tabs[0].hash);
+  const [isMobile, setIsMobile] = useState(false);
+  const desktop = useMediaQuery({ query: "(max-width: 768px)" });
+  useEffect(() => {
+    setIsMobile(desktop);
+  }, [desktop]);
+
+  const [hidden, setHidden] = useState(false);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious();
+
+    if (latest > previous && latest > 150) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
 
   const variants = {
     open: {
-      height: 590
+      height: 490
     },
     closed: {
       height: 70
@@ -41,7 +65,18 @@ export const NewNav = () => {
   };
 
   return (
-    <div className="fixed inset-x-0 top-2 lg:top-8 z-50">
+    <motion.div
+      variants={{
+        hidden: { y: "-200%" },
+        visible: { y: 0 }
+      }}
+      animate={hidden && isMobile ? "hidden" : "visible"}
+      transition={{
+        duration: 0.3,
+        ease: "easeInOut"
+      }}
+      className="fixed inset-x-0 top-2 lg:top-8 z-50"
+    >
       <motion.div className="mx-auto px-6 lg:max-w-4xl flex sm:align-top">
         <motion.div
           animate={isOpen ? "open" : "closed"}
@@ -65,7 +100,7 @@ export const NewNav = () => {
                   onClick={() => setActiveTab(tab.hash)}
                   className={`${
                     activeTab === tab.hash
-                      ? ""
+                      ? "font-bold"
                       : "hover:text-[#2895ff] font-medium"
                   } relative rounded-full px-3 py-1.5 text-lg transition focus-visible:outline-2`}
                   style={{
@@ -103,7 +138,6 @@ export const NewNav = () => {
               <ThemeChanger />
             </div>
             {/* <ThemeChanger /> */}
-            {/* <Button>Join waitlist</Button> */}
             <div ref={ref} className="md:hidden justify-self-end">
               <Hamburger toggled={isOpen} size={20} toggle={setOpen} />
               <AnimatePresence>
@@ -113,7 +147,7 @@ export const NewNav = () => {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.18 }}
-                    className="fixed left-0 shadow-4xl right-0 top-[3.5rem] p-5 pt-0"
+                    className="fixed left-0 shadow-4xl right-0 top-[3.5rem] p-5 pt-0 justify-center items-center align-middle"
                   >
                     <ul className="grid gap-2">
                       {routes.map((route, idx) => {
@@ -159,6 +193,6 @@ export const NewNav = () => {
             <ThemeChanger />
           </div> */}
       </motion.div>
-    </div>
+    </motion.div>
   );
 };

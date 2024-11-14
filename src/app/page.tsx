@@ -5,6 +5,7 @@ import { Features } from "@/sections/Features";
 import { NewNav } from "@/sections/NewNav";
 import TabsFeatures from "@/sections/TabsFeatures";
 import Nav3 from "@/sections/Nav3";
+import { GlassNavigation } from "@/sections/GlassNavigation";
 import { ScreenShots } from "@/sections/ScreenShots";
 import Carousel from "@/sections/Carousel";
 
@@ -15,6 +16,7 @@ export default function Home() {
     <main className="flex flex-col items-center px-4">
       {/* <Nav3 /> */}
       <NewNav />
+      {/* <GlassNavigation /> */}
       <NewHero />
       {/* <TabsFeatures /> */}
       <Features />
