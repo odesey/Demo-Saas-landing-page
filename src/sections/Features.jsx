@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { HeaderGrid } from "@/sections/HeaderGrid";
 import { FeatureCard } from "@/components/FeatureCard";
 import { FeatureCard2 } from "@/components/FeatureCard2";
+import { FeatureCard3 } from "@/components/SpotlightCard";
 import { useInView } from "react-intersection-observer";
 
 import Announcements from "@/assets/bullhorn.svg";
@@ -18,7 +19,7 @@ import Permissions from "@/assets/users-gear.svg";
 import Plate from "@/assets/plate-utensils.svg";
 import { useSectionInView } from "@/lib/hooks";
 
-const ICON_CLASS = "size-12 inline-flex justify-center items-center";
+const ICON_CLASS = "size-10 md:size-12 inline-flex justify-center items-center";
 
 const features = [
   {
@@ -99,7 +100,7 @@ export const Features = () => {
   const { ref } = useSectionInView("#features");
 
   return (
-    <section ref={ref} className="relative scroll-mt-24 " id="features">
+    <section ref={ref} className="relative scroll-mt-24 mb-12" id="features">
       <div className="container">
         <div
           className="text-center max-w-3xl lg:mx-auto"

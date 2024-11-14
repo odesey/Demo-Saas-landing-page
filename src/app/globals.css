@@ -133,22 +133,39 @@
   object-fit: contain;
 } */
 
-@media (min-width: 375px) {
+@media (min-width: 350px) {
   .swiper-slide img {
-    width: 70%;
+    width: 100%;
     height: 100%;
   }
 
   .mySwiper.swiper {
     width: 240px;
-    height: 180px;
+    height: 240px;
+  }
+}
+
+@media (min-width: 400px) {
+  .swiper-slide img {
+    width: 88%;
+    height: 100%;
+  }
+
+  .mySwiper.swiper {
+    width: 240px;
+    height: 200px;
   }
 }
 
 @media (min-width: 425px) {
   .swiper-slide img {
-    width: 10%;
+    width: 100%;
     height: 100%;
+  }
+
+  .mySwiper.swiper {
+    width: 240px;
+    height: 200px;
   }
 }
 

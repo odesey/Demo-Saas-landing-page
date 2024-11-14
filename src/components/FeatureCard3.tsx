@@ -4,16 +4,16 @@ import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 
 import Logo from "@/assets/logo.svg";
 
-export const FeatureCard = ({
+export const FeatureCard3 = ({
   icon,
   title,
   description
 }: {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
+  icon: React.ReactNode,
+  title: string,
+  description: string
 }) => {
-  const borderRef = useRef<HTMLDivElement>(null);
+  const borderRef = useRef < HTMLDivElement > null;
   const offsetX = useMotionValue(-100);
   const offsetY = useMotionValue(-100);
   const maskImage = useMotionTemplate`radial-gradient(100px 100px at ${offsetX}px ${offsetY}px, black, transparent)`;
@@ -45,13 +45,18 @@ export const FeatureCard = ({
         }}
       ></motion.div>
       <div className="my-2 inline-flex justify-center items-center dark:fill-white">
-        <div className="backdrop-blur-sm backdrop-filter items-center justify-center relative flex size-20 rounded-sm border border-white/65 dark:border-onyx-700 bg-primeBlue-50 dark:bg-onyx-900 dark:bg-[linear-gradient(135deg,_rgba(31,30,38,0.2),_rgba(75,72,91,0.8))] bg-[linear-gradient(135deg,_rgba(158,207,255,0.15),_rgba(255,255,255,0.3))] [box-shadow:4px_4px_8px_rgba(158,207,255,0.3),_-4px_-4px_8px_#ffffff] dark:[box-shadow:6px_6px_12px_rgba(0,0,0,0.4),_-6px_-6px_12px_rgba(0,0,0,0.2)]">
-          <div className="fill-primeBlue-500 backdrop-blur-sm backdrop-filter">
-            {icon}
+        {/* <div></div> */}
+        <div className="size-32 bg-primeBlue-100 justify-center items-center align-middle flex rounded-full">
+          <div className="size-24 bg-primeBlue-200 relative justify-center items-center align-middle flex rounded-full">
+            <div className=" size-16 bg-primeBlue-300 relative flex justify-center items-center align-middle rounded-full">
+              <div className="size-8 flex relative fill-white justify-center items-center align-middle">
+                {icon}
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <h3 className="mb-6 mx-4 text-2xl font-bold text-onyx-400 dark:text-onyx-100">
+      <h3 className="mb-6 mx-4 text-2xl font-bold text-onyx-700 dark:text-onyx-100">
         {title}
       </h3>
       <p className="m-4 dark:text-onyx-300 text-onyx-500 text-lg">
