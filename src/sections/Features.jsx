@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { HeaderGrid } from "@/sections/HeaderGrid";
 import { FeatureCard } from "@/components/FeatureCard";
 import { FeatureCard2 } from "@/components/FeatureCard2";
-import { FeatureCard3 } from "@/components/SpotlightCard";
 import { useInView } from "react-intersection-observer";
 
 import Announcements from "@/assets/bullhorn.svg";
