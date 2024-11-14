@@ -118,7 +118,7 @@ export const ScreenShots = () => {
                       // fill
                       height={2340}
                       width={1080}
-                      sizes="(min-width: 1620px) 1360px, (min-width: 900px) 660px, (min-width: 660px) calc(18.18vw + 500px), (min-width: 350px)"
+                      sizes="(min-width: 1620px) 1360px, (min-width: 900px) 660px, (min-width: 660px), (min-width: 400px) 680px, calc(18.18vw + 500px), (min-width: 350px)"
                       src={image.src}
                       alt={image.alt}
                       className="block h-full w-full bg-primeBlue-100 bg-opacity-10 object-cover"
