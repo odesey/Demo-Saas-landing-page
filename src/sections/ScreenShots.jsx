@@ -118,7 +118,7 @@ export const ScreenShots = () => {
                       // fill
                       height={2340}
                       width={1080}
-                      sizes="(min-width: 1620px) 1360px, (min-width: 900px) 660px, (min-width: 660px)"
+                      sizes="(min-width: 1620px) 1360px, (min-width: 900px) 660px, (min-width: 660px) calc(18.18vw + 500px), (min-width: 350px)"
                       src={image.src}
                       alt={image.alt}
                       className="block h-full w-full bg-primeBlue-100 bg-opacity-10 object-cover"
@@ -133,7 +133,7 @@ export const ScreenShots = () => {
               onClick={handlePrev}
               className="flex absolute -left-4 md:left-40 lg:left-96 top-12"
             >
-              <Prev className="md:size-16 lg:size-20 size-12 fill-primeBlue-400 z-50 dark:fill-onyx-600" />
+              <Prev className="md:size-16 lg:size-20 size-12 fill-primeBlue-500 z-50 dark:fill-onyx-600" />
             </button>
             <Swiper
               ref={swiperRef}
@@ -160,7 +160,7 @@ export const ScreenShots = () => {
               onClick={handleNext}
               className="absolute -right-4 md:right-40 lg:right-96 top-12"
             >
-              <Next className="md:size-16 lg:size-20 size-12 fill-primeBlue-400 z-50 dark:fill-onyx-600" />
+              <Next className="md:size-16 lg:size-20 size-12 fill-primeBlue-500 z-50 dark:fill-onyx-600" />
             </button>
           </div>
         </div>
