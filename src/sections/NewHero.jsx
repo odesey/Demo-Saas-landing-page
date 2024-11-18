@@ -14,11 +14,10 @@ export const NewHero = () => {
       <Beams />
       <div
         ref={ref}
-        className="w-full min-h-screen flex items-center justify-center p-4 relative overflow-hidden pt-24 lg:pt-0"
+        className="w-full flex items-center justify-center p-4 relative overflow-hidden pt-24 lg:pt-0 lg:mt-32"
         id="home"
       >
         <div className="absolute inset-0" style={{ filter: "blur(5px)" }}></div>
-        {/* <DotPattern className="z-0" /> */}
         <div className="max-w-7xl w-full flex flex-col lg:flex-row items-center justify-between rounded-xl p-4 sm:p-8 relative z-10">
           <div className="w-full lg:w-1/2 lg:mb-0">
             <BlurFade delay={0.15}>
@@ -126,11 +125,11 @@ export const NewHero = () => {
             {/* </BlurFade> */}
           </div>
 
-          <div className="w-full lg:w-1/2 flex justify-center lg:justify-end mt-4 lg:mt-0">
+          {/* <div className="w-full lg:w-1/2 flex justify-center lg:justify-end mt-4 lg:mt-0">
             <div className="relative w-full max-w-[400px] sm:max-w-[520px] md:max-w-[600px] lg:max-w-3xl h-[550px] sm:h-[650px] md:h-[700px] lg:h-[750px]">
-              {/* content to the right goes here */}
+              content to the right goes here
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

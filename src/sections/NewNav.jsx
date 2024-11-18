@@ -10,6 +10,7 @@ import {
 import { useClickAway } from "react-use";
 import { Squash as Hamburger } from "hamburger-react";
 import { useMediaQuery } from "react-responsive";
+import { Hamburger2 } from "@/components/Hamburger";
 
 import { ThemeChanger } from "@/app/Theme-changer";
 import { routes } from "@/data/routes";
@@ -139,6 +140,7 @@ export const NewNav = () => {
             </div>
             {/* <ThemeChanger /> */}
             <div ref={ref} className="md:hidden justify-self-end">
+              {/* <Hamburger2 /> */}
               <Hamburger toggled={isOpen} size={20} toggle={setOpen} />
               <AnimatePresence>
                 {isOpen && (

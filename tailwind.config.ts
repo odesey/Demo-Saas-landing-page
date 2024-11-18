@@ -18,7 +18,7 @@ const config = {
     boxShadow: {
       sm: "box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",
       md: "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
-      mdbl: "0px 7px 16px rgb(40 149 255 / 20%);",
+      mdbl: "0px 8px 16px rgb(40 149 255 / 20%);",
       big: "0px 7px 32px rgb(0 0 0 / 35%);",
       massive:
         "0px 64px 64px rgba(0, 0, 0, 0.15), 0px 32px 32px rgba(0, 0, 0, 0.15), 0px 16px 16px rgba(0, 0, 0, 0.15), 0px 8px 8px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.15);"
@@ -36,6 +36,9 @@ const config = {
       }
     },
     extend: {
+      screens: {
+        betterhover: { raw: "(hover: hover)" }
+      },
       container: {
         center: true,
         padding: {
