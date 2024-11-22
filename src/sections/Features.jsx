@@ -11,13 +11,8 @@ import React, {
 import { motion, AnimatePresence } from "framer-motion";
 import { HeaderGrid } from "@/sections/HeaderGrid";
 import { FeatureCard } from "@/components/FeatureCard";
-import { FeatureCard2 } from "@/components/FeatureCard2";
+
 import { useInView } from "react-intersection-observer";
-import Connector, {
-  SConnector,
-  LineConnector,
-  NarrowSConnector
-} from "react-svg-connector";
 
 import ThumbsUp from "@/assets/thumbs-up.svg";
 import Radio from "@/assets/radio.svg";
