@@ -1,12 +1,26 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import React, {
+  forwardRef,
+  useEffect,
+  useState,
+  useCallback,
+  useMemo,
+  useRef
+} from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { HeaderGrid } from "@/sections/HeaderGrid";
 import { FeatureCard } from "@/components/FeatureCard";
 import { FeatureCard2 } from "@/components/FeatureCard2";
 import { useInView } from "react-intersection-observer";
+import Connector, {
+  SConnector,
+  LineConnector,
+  NarrowSConnector
+} from "react-svg-connector";
 
+import ThumbsUp from "@/assets/thumbs-up.svg";
+import Radio from "@/assets/radio.svg";
 import Announcements from "@/assets/bullhorn.svg";
 import Bible from "@/assets/book-bible.svg";
 import Broadcast from "@/assets/signal-stream.svg";
@@ -19,100 +33,162 @@ import Plate from "@/assets/plate-utensils.svg";
 import ChipTabs from "@/components/ChipTabs";
 import { FiSend } from "react-icons/fi";
 import { useSectionInView } from "@/lib/hooks";
+import LogoPing from "@/components/Ping";
+import NeumorphismButton from "@/components/NeumorphismButton";
 
 const ICON_CLASS = "size-10 md:size-12 inline-flex justify-center items-center";
 
-const features = [
-  {
-    title: "Announcements",
-    description:
-      "Let the congregation, community and other churches know what is going on at your church.",
-    dataAos: "fade-right",
-    icon: <Announcements className={ICON_CLASS} />,
-    src: Announcements
-  },
-  {
-    title: "Broadcasts",
-    description:
-      "Communicate with nearby churches. Invite them to attend and support programs being offered by your church.",
-    dataAos: "fade-left",
-    icon: <Broadcast className={ICON_CLASS} />,
-    src: Broadcast
-  },
-  {
-    title: "Calendar",
-    description:
-      "Add upcoming church events to the calendar. GenesisApp will automatically sync phone calendars of all members.",
-    dataAos: "fade-down",
-    icon: <Calendar className={ICON_CLASS} />,
-    src: Calendar
-  },
-  {
-    title: "Community Services",
-    description:
-      "Let your community know how your church can be a blessing to them.",
-    dataAos: "fade-left",
-    icon: <CommunityService className={ICON_CLASS} />,
-    src: CommunityService
-  },
-  {
-    title: "Members Directory",
-    description:
-      "List of members, including birthdays, anniversaries and roles within the church.",
-    dataAos: "fade-right",
-    icon: <Members className={ICON_CLASS} />,
-    src: Members
-  },
-  {
-    title: "Messages",
-    description:
-      "Anyone in the world can now send your church a message. Members with the delegated permission can respond.",
-    dataAos: "fade-up",
-    icon: <Messages className={ICON_CLASS} />,
-    src: Messages
-  },
-  {
-    title: "Outreach",
-    description:
-      "Keep track of leads within your community and assign members to follow-up with them.",
-    dataAos: "fade-left",
-    icon: <Bible className={ICON_CLASS} />,
-    src: Bible
-  },
-  {
-    title: "Permissions",
-    description:
-      "Roles and permissions can be delegated to members in GenessisApp.",
-    dataAos: "fade-left",
-    icon: <Permissions className={ICON_CLASS} />,
-    src: Permissions
-  },
-  {
-    title: "Potluck",
-    description:
-      "Turn pot-luck into pot-managed. Now all members can communicate on dishes for the next fellowship meal.",
-    dataAos: "fade-left",
-    icon: <Plate className={ICON_CLASS} />,
-    src: Plate
-  }
+const FEATURES = [
+  [
+    {
+      id: 1,
+      title: "Announcements",
+      description:
+        "Let the congregation, community and other churches know what is going on at your church.",
+      dataAos: "fade-right",
+      icon: <Announcements className={ICON_CLASS} />,
+      src: Announcements
+    },
+
+    {
+      id: 2,
+      title: "Calendar",
+      description:
+        "Add upcoming church events to the calendar. GenesisApp will automatically sync phone calendars of all members.",
+      dataAos: "fade-down",
+      icon: <Calendar className={ICON_CLASS} />,
+      src: Calendar
+    },
+    {
+      id: 3,
+      title: "Members Directory",
+      description:
+        "List of members, including birthdays, anniversaries and roles within the church.",
+      dataAos: "fade-right",
+      icon: <Members className={ICON_CLASS} />,
+      src: Members
+    },
+    {
+      id: 4,
+      title: "Messages",
+      description:
+        "Anyone in the world can now send your church a message. Members with the delegated permission can respond.",
+      dataAos: "fade-up",
+      icon: <Messages className={ICON_CLASS} />,
+      src: Messages
+    },
+    {
+      id: 5,
+      title: "Permissions",
+      description:
+        "Roles and permissions can be delegated to members in GenessisApp.",
+      dataAos: "fade-left",
+      icon: <Permissions className={ICON_CLASS} />,
+      src: Permissions
+    },
+    {
+      id: 6,
+      title: "Potluck",
+      description:
+        "Turn pot-luck into pot-managed. Now all members can communicate on dishes for the next fellowship meal.",
+      dataAos: "fade-left",
+      icon: <Plate className={ICON_CLASS} />,
+      src: Plate
+    }
+  ],
+  [
+    {
+      id: 7,
+      title: "Community Services",
+      description:
+        "Let your community know how your church can be a blessing to them",
+      dataAos: "fade-left",
+      icon: <CommunityService className={ICON_CLASS} />,
+      src: CommunityService
+    },
+    {
+      id: 8,
+      title: "Outreach",
+      description:
+        "Keep track of leads within your community and assign members to follow-up with them",
+      dataAos: "fade-left",
+      icon: <Bible className={ICON_CLASS} />,
+      src: Bible
+    },
+    {
+      id: 9,
+      title: "Messages",
+      description:
+        "Anyone in the world can now send your church a message. Members with the delegated permission can respond",
+      dataAos: "fade-up",
+      icon: <Messages className={ICON_CLASS} />,
+      src: Messages
+    }
+  ],
+  [
+    {
+      id: 10,
+      title: "Broadcasts",
+      description:
+        "Communicate with nearby churches. Invite them to attend and support programs being offered by your church",
+      dataAos: "fade-left",
+      icon: <Broadcast className={ICON_CLASS} />,
+      src: Broadcast
+    },
+    {
+      id: 11,
+      title: "Screen Messages",
+      description:
+        "Messages from other churches must be approved before they are sent to church members",
+      dataAos: "fade-left",
+      icon: <ThumbsUp className={ICON_CLASS} />,
+      src: ThumbsUp
+    },
+    {
+      id: 12,
+      title: "Bulletin Board",
+      description:
+        "Accepted messages from other churches will be posted to your church's bulletin board",
+      dataAos: "fade-left",
+      icon: <Radio className={ICON_CLASS} />,
+      src: Radio
+    }
+  ]
 ];
 
 const FEATURE_TABS = [
   {
     id: 0,
-
-    title: "Congregation"
+    label: "Congregation"
   },
   {
     id: 1,
-
-    title: "Community"
+    label: "Community"
   },
   {
     id: 2,
-    title: "Churches"
+    label: "Churches"
   }
 ];
+
+const NEUMORPH_TABS = [
+  {
+    title: "Congregation",
+    Feature: () => <ExampleFeature Icon={FiSearch} />,
+    Svg: () => <Congregation className="sizee-12 fill-white" />
+  },
+  {
+    title: "Community",
+    Feature: () => <ExampleFeature Icon={FiSave} />,
+    Svg: () => <Church className="sizee-12 fill-white" />
+  },
+  {
+    title: "Churches",
+    Feature: () => <ExampleFeature Icon={FiMonitor} />,
+    Svg: () => <Community className="sizee-12 fill-white" />
+  }
+];
+
 export const Features = () => {
   const [selected, setSelected] = useState(0);
 
@@ -130,50 +206,51 @@ export const Features = () => {
           <p className="text-onyx-300 mt-4">
             Here are some of the features that GenesisApp offers
           </p>
-          <div className="w-full flex relative items-center justify-center align-middle">
-            <div className=" min-h-[200px] flex items-center justify-center w-full">
-              {FEATURE_TABS.map((tab) => (
-                <NeumorphismButton
-                  key={tab.id}
-                  label={tab.title}
-                  selected={selected}
-                  setSelected={setSelected}
-                  id={tab.id}
-                />
-              ))}
-            </div>
+          <div className=" w-full flex min-h-[450px] relative h-96 justify-center">
+            <LogoPing />
+          </div>
+
+          {/* <div className="w-full flex relative items-center justify-center align-middle"> */}
+          <div className=" min-h-[200px] flex items-center w-full justify-center">
+            {FEATURE_TABS.map((tab, index) => (
+              <NeumorphismButton
+                key={index}
+                label={tab.label}
+                selected={selected}
+                setSelected={setSelected}
+                id={tab.id}
+                index={index}
+              />
+            ))}
           </div>
         </div>
-        <div className="grid md:grid-cols-2 gap-6 lg:grid-cols-3 lg:gap-x-6 mt-24 lg:gap-y-4 lg:text-center mx-8">
-          {features.map((feature) => (
+        <div className="flex relative w-full">
+          <AnimatePresence mode="wait">
+            {NEUMORPH_TABS.map((tab, index) => {
+              return selected === index ? (
+                <motion.div
+                  transition={{ duration: 0.2 }}
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.5 }}
+                  key={index}
+                >
+                  <FeatureTab selected={selected} />
+                </motion.div>
+              ) : undefined;
+            })}
+          </AnimatePresence>
+          {/* <AnimatePresence mode="wait"> */}
+          {/* {FEATURES[selected].map((feature, index) => (
             <FeatureCard
-              key={feature.title}
+              key={feature.id}
               title={feature.title}
               description={feature.description}
               icon={feature.icon}
               src={feature.src}
             />
-            // <div
-            //   key={feature.title}
-            //   className="p-4 border dark:border-onyx-800 border-primeBlue-200 rounded-sm"
-            // >
-            //   <div>
-            //     <div
-            //       data-aos={feature.dataAos}
-            //       data-aos-duration="2000"
-            //       className="flex items-center justify-center w-16 h-16 fill-primeBlue-400 text-primeBlue-400 rounded-xl bg-gradient-to-tr dark:from-onyx-950 dark:to-onyx-700 lg:mx-auto border dark:border-onyx-800 border-white shadow-mdbl dark:shadow-massive"
-            //     >
-            //       {feature.icon}
-            //     </div>
-            //     <p className="mt-12 text-xl font-medium leading-6 dark:text-white text-onyx-400">
-            //       {feature.title}
-            //     </p>
-            //   </div>
-            //   <p className="mt-4 text-base text-onyx-300">
-            //     {feature.description}
-            //   </p>
-            // </div>
-          ))}
+          ))} */}
+          {/* </AnimatePresence> */}
         </div>
         <div className="text-center max-w-3xl lg:mx-auto mt-16">
           <h4 className="text-2xl font-display">Plus much, much more!</h4>
@@ -182,34 +259,20 @@ export const Features = () => {
     </section>
   );
 };
-// shadow-[-5px_-5px_10px_rgba(255,_255,_255,_0.8),_5px_5px_10px_rgba(0,_0,_0,_0.25)]
 
-const NeumorphismButton = ({ label, selected, setSelected, id }) => {
-  return (
-    <button
-      onClick={() => setSelected(id)}
-      className={`
-        mx-1 md:mx-4 lg:mx-10
-        px-4 py-2 rounded-[8px]
-        flex items-center gap-2
-        dark:text-onyx-300 text-onyx-500
-        border border-white dark:border-onyx-800
-        transition-all ease-in-out duration-200
-        ${
-          selected === id
-            ? "shadow-[-1px_-1px_5px_rgba(255,_255,_255,_0.6),_1px_1px_5px_rgba(40,_149,_255,_0.3),inset_-2px_-2px_5px_rgba(255,_255,_255,_1),inset_2px_2px_4px_rgba(40,_149,_255,_0.3)]"
-            : "shadow-[-4px_-4px_8px_rgba(255,_255,_255,_0.8),_4px_4px_8px_rgba(40,_149,_255,_0.3)]"
-        }
-    `}
-    >
-      {/* <FiSend /> */}
-      <p
-        className={`text-sm tracking-tighter md:tracking-wide lg:text-2xl lg:p-2 min-w-16 md:min-w-24  ${
-          selected === id ? "font-bold text-primeBlue-400" : "font-semibold"
-        }`}
-      >
-        {label}
-      </p>
-    </button>
-  );
-};
+const FeatureTab = ({ selected }) => (
+  <div className="flex w-full relative ">
+    <div className="grid md:grid-cols-2 gap-6 lg:grid-cols-3 lg:gap-x-6 mt-24 lg:gap-y-4 lg:text-center mx-8 justify-center align-middle items-center">
+      {FEATURES[selected].map((feature, index) => (
+        <FeatureCard
+          index={index}
+          key={feature.id}
+          title={feature.title}
+          description={feature.description}
+          icon={feature.icon}
+          src={feature.src}
+        />
+      ))}
+    </div>
+  </div>
+);

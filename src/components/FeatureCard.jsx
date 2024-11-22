@@ -1,24 +1,21 @@
 "use client";
 import { useEffect, useRef } from "react";
-import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useMotionTemplate,
+  useMotionValue
+} from "framer-motion";
 
 import Logo from "@/assets/logo.svg";
 
-export const FeatureCard = ({
-  icon,
-  title,
-  description
-}: {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}) => {
-  const borderRef = useRef<HTMLDivElement>(null);
+export const FeatureCard = ({ index, icon, title, description }) => {
+  const borderRef = useRef(null);
   const offsetX = useMotionValue(-100);
   const offsetY = useMotionValue(-100);
   const maskImage = useMotionTemplate`radial-gradient(150px 150px at ${offsetX}px ${offsetY}px, black, transparent)`;
 
-  const updateMousePosition = (e: MouseEvent) => {
+  const updateMousePosition = (e) => {
     if (!borderRef.current) return;
 
     const borderRect = borderRef.current.getBoundingClientRect();
@@ -36,7 +33,14 @@ export const FeatureCard = ({
   }, []);
 
   return (
-    <div
+    <motion.div
+      transition={{
+        duration: 0.2,
+        ease: "easeInOut",
+        delay: index * 0.019
+      }}
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
       className={`
       relative border
     border-primeBlue-50 px-4 my-2 py-2
@@ -46,7 +50,7 @@ export const FeatureCard = ({
     >
       <motion.div
         ref={borderRef}
-        className="absolute inset-0 border-2 border-primeBlue-400 rounded-sm "
+        className="absolute inset-0 border-2 rounded-sm "
         style={{
           maskImage
         }}
@@ -74,6 +78,6 @@ export const FeatureCard = ({
       <p className="m-4 dark:text-onyx-300 text-onyx-500 text-lg">
         {description}
       </p>
-    </div>
+    </motion.div>
   );
 };

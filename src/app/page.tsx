@@ -2,6 +2,8 @@ import { NewHero } from "@/sections/NewHero";
 import React from "react";
 import { Faq } from "@/sections/Faq";
 import { Features } from "@/sections/Features";
+import { Features3 } from "@/sections/Features3";
+import { Features2 } from "@/sections/Features2";
 import { NewNav } from "@/sections/NewNav";
 import TabsFeatures from "@/sections/TabsFeatures";
 import Nav3 from "@/sections/Nav3";
