@@ -58,7 +58,7 @@ const FEATURES = [
       id: 3,
       title: "Members Directory",
       description:
-        "List of members, including birthdays, anniversaries and roles within the church.",
+        "List of members, including birthdays, anniversaries and roles within your congregation",
       dataAos: "fade-right",
       icon: <Members className={ICON_CLASS} />,
       src: Members
@@ -197,11 +197,12 @@ export const Features = () => {
           data-aos="fade-up"
           data-aos-duration="2000"
         >
-          <h3 className="text-4xl font-display">Key Features</h3>
-          <p className="text-onyx-300 mt-4">
-            Here are some of the features that GenesisApp offers
+          <h3 className="text-6xl font-display font-semibold">Key Features</h3>
+          <p className="text-onyx-300 mt-8 text-xl">
+            Here are some of the ways that GenesisApp helps your church
+            communicate better.
           </p>
-          <div className=" w-full flex min-h-[450px] relative h-96 justify-center">
+          <div className=" w-full flex relative justify-center items-center align-middle">
             <LogoPing />
           </div>
 
@@ -256,8 +257,8 @@ export const Features = () => {
 };
 
 const FeatureTab = ({ selected }) => (
-  <div className="flex w-full relative ">
-    <div className="grid md:grid-cols-2 gap-6 lg:grid-cols-3 lg:gap-x-6 mt-24 lg:gap-y-4 lg:text-center mx-8 justify-center align-middle items-center">
+  <div className="flex w-full relative min-h-[750px]">
+    <div className="grid md:grid-cols-2 gap-6 lg:grid-cols-3 lg:gap-x-6 mt-8 lg:gap-y-4 lg:text-center mx-8 justify-start align-top items-start">
       {FEATURES[selected].map((feature, index) => (
         <FeatureCard
           index={index}
