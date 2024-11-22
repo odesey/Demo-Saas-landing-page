@@ -36,8 +36,8 @@ export const FeatureCard = ({ index, icon, title, description }) => {
     <motion.div
       transition={{
         duration: 0.2,
-        ease: "easeInOut",
-        delay: index * 0.019
+        ease: "easeInOut"
+        // delay: index * 0.019
       }}
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -45,7 +45,7 @@ export const FeatureCard = ({ index, icon, title, description }) => {
       relative border
     border-primeBlue-50 px-4 my-2 py-2
     text-center rounded-sm sm:flex-1 dark:border-onyx-800
-    shadow-mdbl dark:shadow-big min-h-[260px] md:min-h-[300px]
+    shadow-mdbl dark:shadow-big min-h-[260px] md:min-h-[340px]
     `}
     >
       <motion.div
