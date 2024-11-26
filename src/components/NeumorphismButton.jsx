@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import {
   Handle,
   Position,
@@ -15,11 +16,13 @@ import {
   useViewport
 } from "@xyflow/react";
 
-// const NeumorphismButton = forwardRef(function (props, ref) {
-const NeumorphismButton = (props) => {
+const NeumorphismButton = forwardRef(function (props, ref) {
+  // 1-800-299-5865
+  // const NeumorphismButton = (props) => {
   const { label, selected, setSelected, index } = props;
   return (
     <button
+      ref={ref}
       onClick={() => setSelected(index)}
       className={`
             z-10
@@ -46,6 +49,6 @@ const NeumorphismButton = (props) => {
       </p>
     </button>
   );
-};
-// });
+  // };
+});
 export default NeumorphismButton;
