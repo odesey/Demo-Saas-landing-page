@@ -9,10 +9,17 @@ import React, {
   useRef
 } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { HeaderGrid } from "@/sections/HeaderGrid";
+import {
+  ConnectProvider,
+  Connect,
+  ConnectLines,
+  ConnectElement
+} from "react-connect-lines";
+
+// import { HeaderGrid } from "@/sections/HeaderGrid";
 import { FeatureCard } from "@/components/FeatureCard";
 
-import { useInView } from "react-intersection-observer";
+// import { useInView } from "react-intersection-observer";
 
 import ThumbsUp from "@/assets/thumbs-up.svg";
 import Radio from "@/assets/radio.svg";
@@ -25,8 +32,8 @@ import Members from "@/assets/users.svg";
 import Messages from "@/assets/messages.svg";
 import Permissions from "@/assets/users-gear.svg";
 import Plate from "@/assets/plate-utensils.svg";
-import ChipTabs from "@/components/ChipTabs";
-import { FiSend } from "react-icons/fi";
+// import ChipTabs from "@/components/ChipTabs";
+// import { FiSend } from "react-icons/fi";
 import { useSectionInView } from "@/lib/hooks";
 import LogoPing from "@/components/Ping";
 import NeumorphismButton from "@/components/NeumorphismButton";
@@ -184,6 +191,12 @@ const NEUMORPH_TABS = [
   }
 ];
 
+const ELEMENTS = [
+  { id: "id-1", connectWith: [{ id: "id-2" }] },
+  { id: "id-2", connectWith: [{ id: "id-3" }] },
+  { id: "id-3", connectWith: [{ id: "id-1" }] }
+];
+
 export const Features = () => {
   const [selected, setSelected] = useState(0);
 
@@ -202,23 +215,85 @@ export const Features = () => {
             Here are some of the ways that GenesisApp helps your church
             communicate better.
           </p>
-          <div className=" w-full flex relative justify-center items-center align-middle">
-            <LogoPing />
-          </div>
+          <ConnectProvider>
+            <div className=" w-full flex relative justify-center items-center align-middle -z-1">
+              <Connect
+                id="element-a"
+                connectWith={[
+                  {
+                    id: "element-0",
+                    edge: "step",
+                    handlePosition: "top",
+                    color: selected === 0 ? "#2895FF" : "#ADC5DD",
+                    stroke: selected === 0 ? "solid" : "dashed"
+                  },
+                  {
+                    id: "element-1",
+                    handlePosition: "top",
+                    edge: "step",
+                    color: selected === 1 ? "#2895FF" : "#ADC5DD",
+                    stroke: selected === 1 ? "solid" : "dashed"
+                  },
+                  {
+                    id: "element-2",
+                    edge: "step",
+                    handlePosition: "top",
+                    color: selected === 2 ? "#2895FF" : "#ADC5DD",
+                    stroke: selected === 2 ? "solid" : "dashed"
+                  }
+                ]}
+              >
+                <LogoPing id="element-a" />
+              </Connect>
+              {/* <div className="flex relative justify-between  w-full h-96">
+              <ConnectProvider>
+                <Connect
+                  id="id-1"
+                  connectWith={[
+                    { id: "id-2", color: "red", stroke: "dashed" },
+                    { id: "id-3", edge: "step" }
+                  ]}
+                >
+                  <div className="bg-red-600 absolute size-16 left-0 top-0" />
+                </Connect>
 
-          {/* <div className="w-full flex relative items-center justify-center align-middle"> */}
-          <div className=" min-h-[200px] flex items-center w-full justify-center">
-            {FEATURE_TABS.map((tab, index) => (
-              <NeumorphismButton
-                key={index}
-                label={tab.label}
-                selected={selected}
-                setSelected={setSelected}
-                id={tab.id}
-                index={index}
-              />
-            ))}
-          </div>
+                <Connect id="id-2">
+                  <div className="bg-violet-600 absolute size-16" />
+                </Connect>
+
+                <Connect id="id-3">
+                  <div className="bg-blue-600 absolute size-16 right-0 bottom-0" />
+                </Connect>
+              </ConnectProvider>
+            </div> */}
+              {/* </Connect> */}
+            </div>
+            {/* <ConnectProvider> */}
+            {/* <div className="flex relative justify-between">
+            <div className="bg-red-600 relative" ref={setEl1} />
+            <div className="bg-violet-600 relative" ref={setEl2} />
+            <div className="bg-green-600 relative" ref={setEl3} />
+
+            <ConnectLines elements={elements} />
+          </div> */}
+            {/* </ConnectProvider> */}
+
+            {/* <div className="w-full flex relative items-center justify-center align-middle"> */}
+            <div className=" min-h-[200px] flex items-center w-full justify-center">
+              {FEATURE_TABS.map((tab, index) => (
+                <Connect id={`element-${index}`} key={index}>
+                  <NeumorphismButton
+                    key={index}
+                    label={tab.label}
+                    selected={selected}
+                    setSelected={setSelected}
+                    id={tab.id}
+                    index={index}
+                  />
+                </Connect>
+              ))}
+            </div>
+          </ConnectProvider>
         </div>
         <div className="flex relative w-full">
           <AnimatePresence mode="wait">

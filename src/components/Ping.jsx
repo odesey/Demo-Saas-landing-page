@@ -3,18 +3,15 @@ import { motion } from "framer-motion";
 import { Handle, Position } from "@xyflow/react";
 import LogoWhite from "@/public/LogoWhite.svg";
 
-// const Pinging = forwardRef(function Pinging(props, ref) {
-const LogoPing = () => {
+const LogoPing = forwardRef(function Pinging(props, ref) {
+  // const LogoPing = () => {
   return (
-    <div
-      // ref={ref}
-      className="grid place-content-center px-4 py-36"
-    >
+    <div ref={ref} className="grid place-content-center  my-36 ">
       <Ping />
     </div>
   );
-};
-// });
+  // };
+});
 
 const LOOP_DURATION = 7;
 
