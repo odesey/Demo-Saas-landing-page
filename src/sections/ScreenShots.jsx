@@ -113,7 +113,7 @@ export const ScreenShots = () => {
             <Swiper className="mainSwiper" {...swiperParameters}>
               {images.map((image, index) => (
                 <SwiperSlide key={index} className="">
-                  <div className="flex items-center justify-center rounded-full bg-transparent">
+                  <div className="flex items-center justify-center bg-transparent">
                     <Image
                       // fill
                       height={2340}

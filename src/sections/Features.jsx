@@ -9,12 +9,6 @@ import React, {
   useRef
 } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  ConnectProvider,
-  Connect,
-  ConnectLines,
-  ConnectElement
-} from "react-connect-lines";
 
 // import { HeaderGrid } from "@/sections/HeaderGrid";
 import { FeatureCard } from "@/components/FeatureCard";
@@ -191,12 +185,6 @@ const NEUMORPH_TABS = [
   }
 ];
 
-const ELEMENTS = [
-  { id: "id-1", connectWith: [{ id: "id-2" }] },
-  { id: "id-2", connectWith: [{ id: "id-3" }] },
-  { id: "id-3", connectWith: [{ id: "id-1" }] }
-];
-
 export const Features = () => {
   const [selected, setSelected] = useState(0);
 
@@ -215,85 +203,21 @@ export const Features = () => {
             Here are some of the ways that GenesisApp helps your church
             communicate better.
           </p>
-          <ConnectProvider>
-            <div className=" w-full flex relative justify-center items-center align-middle -z-1">
-              <Connect
-                id="element-a"
-                connectWith={[
-                  {
-                    id: "element-0",
-                    edge: "step",
-                    handlePosition: "top",
-                    color: selected === 0 ? "#2895FF" : "#ADC5DD",
-                    stroke: selected === 0 ? "solid" : "dashed"
-                  },
-                  {
-                    id: "element-1",
-                    handlePosition: "top",
-                    edge: "step",
-                    color: selected === 1 ? "#2895FF" : "#ADC5DD",
-                    stroke: selected === 1 ? "solid" : "dashed"
-                  },
-                  {
-                    id: "element-2",
-                    edge: "step",
-                    handlePosition: "top",
-                    color: selected === 2 ? "#2895FF" : "#ADC5DD",
-                    stroke: selected === 2 ? "solid" : "dashed"
-                  }
-                ]}
-              >
-                <LogoPing id="element-a" />
-              </Connect>
-              {/* <div className="flex relative justify-between  w-full h-96">
-              <ConnectProvider>
-                <Connect
-                  id="id-1"
-                  connectWith={[
-                    { id: "id-2", color: "red", stroke: "dashed" },
-                    { id: "id-3", edge: "step" }
-                  ]}
-                >
-                  <div className="bg-red-600 absolute size-16 left-0 top-0" />
-                </Connect>
-
-                <Connect id="id-2">
-                  <div className="bg-violet-600 absolute size-16" />
-                </Connect>
-
-                <Connect id="id-3">
-                  <div className="bg-blue-600 absolute size-16 right-0 bottom-0" />
-                </Connect>
-              </ConnectProvider>
-            </div> */}
-              {/* </Connect> */}
-            </div>
-            {/* <ConnectProvider> */}
-            {/* <div className="flex relative justify-between">
-            <div className="bg-red-600 relative" ref={setEl1} />
-            <div className="bg-violet-600 relative" ref={setEl2} />
-            <div className="bg-green-600 relative" ref={setEl3} />
-
-            <ConnectLines elements={elements} />
-          </div> */}
-            {/* </ConnectProvider> */}
-
-            {/* <div className="w-full flex relative items-center justify-center align-middle"> */}
-            <div className=" min-h-[200px] flex items-center w-full justify-center">
-              {FEATURE_TABS.map((tab, index) => (
-                <Connect id={`element-${index}`} key={index}>
-                  <NeumorphismButton
-                    key={index}
-                    label={tab.label}
-                    selected={selected}
-                    setSelected={setSelected}
-                    id={tab.id}
-                    index={index}
-                  />
-                </Connect>
-              ))}
-            </div>
-          </ConnectProvider>
+          <div className=" w-full flex relative justify-center items-center align-middle -z-1">
+            <LogoPing id="element-a" />
+          </div>
+          <div className=" min-h-[200px] flex items-center w-full justify-center">
+            {FEATURE_TABS.map((tab, index) => (
+              <NeumorphismButton
+                key={index}
+                label={tab.label}
+                selected={selected}
+                setSelected={setSelected}
+                id={tab.id}
+                index={index}
+              />
+            ))}
+          </div>
         </div>
         <div className="flex relative w-full">
           <AnimatePresence mode="wait">
@@ -301,7 +225,7 @@ export const Features = () => {
               return selected === index ? (
                 <motion.div
                   transition={{ duration: 0.2 }}
-                  initial={{ opacity: 0, scale: 0.5 }}
+                  initial={{ opacity: 0, scale: 0.7 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.5 }}
                   key={index}
@@ -311,17 +235,6 @@ export const Features = () => {
               ) : undefined;
             })}
           </AnimatePresence>
-          {/* <AnimatePresence mode="wait"> */}
-          {/* {FEATURES[selected].map((feature, index) => (
-            <FeatureCard
-              key={feature.id}
-              title={feature.title}
-              description={feature.description}
-              icon={feature.icon}
-              src={feature.src}
-            />
-          ))} */}
-          {/* </AnimatePresence> */}
         </div>
         <div className="text-center max-w-3xl lg:mx-auto mt-16">
           <h4 className="text-2xl font-display">Plus much, much more!</h4>
@@ -332,7 +245,7 @@ export const Features = () => {
 };
 
 const FeatureTab = ({ selected }) => (
-  <div className="flex w-full relative min-h-[750px]">
+  <div className="flex w-full relative min-h-[760px]">
     <div className="grid md:grid-cols-2 gap-6 lg:grid-cols-3 lg:gap-x-6 mt-8 lg:gap-y-4 lg:text-center mx-8 justify-start align-top items-start">
       {FEATURES[selected].map((feature, index) => (
         <FeatureCard

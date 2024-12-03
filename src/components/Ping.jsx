@@ -1,6 +1,5 @@
 import { forwardRef } from "react";
 import { motion } from "framer-motion";
-import { Handle, Position } from "@xyflow/react";
 import LogoWhite from "@/public/LogoWhite.svg";
 
 const LogoPing = forwardRef(function Pinging(props, ref) {

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --swiper-navigation-color: rgba(40, 149, 255, 1);
+  --swiper-navigation-color: rgba(40, 149, 255, 0.6);
 }
 
 .mySwiper.swiper {
@@ -51,17 +51,17 @@
 }
 
 .mainSwiper .swiper-slide:not(.swiper-slide-active) {
-  opacity: 0.6 !important;
-  filter: grayscale(60%) !important;
-  /* transition: all 0.3s ease-in !important; */
-  /* transition-property: all 0.3s ease-in !important; */
+  opacity: 0.3 !important;
+  filter: grayscale(80%) !important;
+  transition: all 0.5s ease-in-out !important;
+  transition-property: all 0.5s ease-in-out !important;
 }
 
-.mainSwiper .swiper-slide:not(.swiper-slide-active):hover {
+.main-outSwiper .swiper-slide:not(.swiper-slide-active):hover {
   opacity: 1 !important;
   filter: grayscale(0%) !important;
-  transition: all 0.3s ease-in !important;
-  transition-property: all 0.3s ease-in !important;
+  transition: all 0.5s ease-in-out !important;
+  transition-property: all 0.5s ease-in-out !important;
 }
 
 /* .swiper-slide-bg-image {
@@ -182,6 +182,13 @@
 @media (min-width: 1024px) {
   .swiper-slide img {
     width: 60%;
+    height: 100%;
+  }
+}
+
+@media (min-width: 1680px) {
+  .swiper-slide img {
+    width: 90%;
     height: 100%;
   }
 }

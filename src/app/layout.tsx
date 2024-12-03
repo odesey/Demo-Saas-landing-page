@@ -5,7 +5,6 @@ import React from "react";
 import { ThemeProvider } from "@/app/theme-provider";
 import Footer from "@/components/layout/Footer";
 import ActiveSectionProvider from "@/context/active-section";
-import { ReactFlowProvider } from "@xyflow/react";
 
 const font = Mulish({ subsets: ["latin"] });
 
@@ -30,7 +29,7 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <ActiveSectionProvider>
-            <ReactFlowProvider>{children}</ReactFlowProvider>
+            {children}
             <Footer />
           </ActiveSectionProvider>
         </ThemeProvider>
