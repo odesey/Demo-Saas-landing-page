@@ -23,7 +23,7 @@ export const NewHero = () => {
         <div className="max-w-7xl w-full flex flex-col lg:flex-row items-center justify-between rounded-xl p-4 sm:p-8 relative z-10">
           <div className="w-full lg:w-1/2 lg:mb-0">
             <BlurFade delay={0.15}>
-              <h1 className="text-4xl lg:text-7xl dark:text-white font-display  md:text-7xl my-4 font-bold ">
+              <h1 className="text-4xl lg:text-7xl dark:text-white font-display  md:text-6xl my-4 font-bold ">
                 Bridge your Church's communication gap with the
                 <span className="block text-primeBlue-500 pt-2">
                   {" "}
@@ -139,8 +139,8 @@ export const NewHero = () => {
               height="500"
               url="@/public/scene.splinecode"
             ></spline-viewer> */}
-            <div className="relative w-full min-h-full ">
-              <SplineHero width="900" height="800" />
+            <div className="relative w-full lg:justify-center lg:items-center lg:align-middle flex md:w-vw h-96 md:h-[500px] lg:h-screen bottom-16 mt-24 md:mt-16 lg:mt-2">
+              <SplineHero />
             </div>
           </div>
         </div>
