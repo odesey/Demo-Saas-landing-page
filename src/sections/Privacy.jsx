@@ -36,31 +36,43 @@ const Privacy = () => {
   };
 
   return (
-    <section className="overflow-hidden py-60 max-w-full md:px-4">
-      <div className=" lg:mx-auto lg:max-w-6xl">
-        <div className="mb-16 flex justify-between md:gap-4">
-          <div className="flex-1 items-center align-middle relative flex">
-            <h2 className="text-3xl font-bold leading-[1.2] md:text-5xl left-[2vw] md:left-0 relative">
-              Church Privacy,{" "}
-              <span className="text-onyx-400">is Our Priority!</span>
-            </h2>
-          </div>
-
-          <div className="flex relative justify-self-end items-center align-middle">
-            <button onClick={shiftLeft}>
-              <Prev className="md:size-12 lg:mx-6 lg:size-16 size-12 fill-primeBlue-500 z-50 dark:fill-onyx-600" />
-            </button>
-
-            <button onClick={shiftRight}>
-              <Next className="md:size-12 lg:ml-6 lg:size-16 size-12 fill-primeBlue-500 z-50 dark:fill-onyx-600" />
-            </button>
-          </div>
+    <section className="overflow-hidden py-60 max-w-full md:px-4 ">
+      <div className="relative z-0 flex-1 items-center justify-center align-middle">
+        <div className="-z-10 max-w-screen-lg w-full h-2/4 blur-2xl absolute">
+          <div className="absolute top-24 left-24 w-56 h-56 bg-violet-600 rounded-full mix-blend-multiply opacity-70 animate-blob filter blur-3xl"></div>
+          <div className="absolute hidden md:block bottom-2 right-1/4 w-56 h-56 bg-sky-600 rounded-full mix-blend-multiply opacity-70 animate-blob delay-1000 filter blur-3xl"></div>
+          <div className="absolute hidden md:block bottom-1/4 left-1/3 w-56 h-56 bg-pink-600 rounded-full mix-blend-multiply opacity-70 animate-blob delay-500 filter blur-3xl"></div>
         </div>
+        <div className=" lg:mx-auto lg:max-w-6xl">
+          <div className="mb-16 flex justify-between md:gap-4">
+            <div className="flex-1 items-center align-middle relative flex">
+              <h2 className="text-3xl font-bold leading-[1.2] md:text-5xl left-[2vw] md:left-0 relative">
+                Church Privacy,{" "}
+                <span className="text-onyx-400">is Our Priority!</span>
+              </h2>
+            </div>
 
-        <div className="flex gap-4 mt-8 relative left-[2vw] md:left-0">
-          {features.map((feat, index) => (
-            <Feature {...feat} key={index} position={position} index={index} />
-          ))}
+            <div className="flex relative justify-self-end items-center align-middle">
+              <button onClick={shiftLeft}>
+                <Prev className="md:size-12 lg:mx-6 lg:size-16 size-12 fill-primeBlue-500 z-50 dark:fill-onyx-600" />
+              </button>
+
+              <button onClick={shiftRight}>
+                <Next className="md:size-12 lg:ml-6 lg:size-16 size-12 fill-primeBlue-500 z-50 dark:fill-onyx-600" />
+              </button>
+            </div>
+          </div>
+
+          <div className="flex gap-4 mt-8 relative left-[2vw] md:left-0">
+            {features.map((feat, index) => (
+              <Feature
+                {...feat}
+                key={index}
+                position={position}
+                index={index}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -176,13 +188,13 @@ const features = [
     title: "End to End Encryption",
     Icon: <Https className={ICON_CLASS} />,
     description:
-      "While there is no secret what God can do, all actions on the GenesisApp platform are encrypted."
+      "While there is no secret what God can do, all actions on the GenesisApp platform are made secret by encryption."
   },
 
   {
-    title: "Encryption at Rest",
+    title: "Encrypted at Rest",
     Icon: <FileLock className={ICON_CLASS} />,
     description:
-      "The name of the Lord is a strong tower...GenesisApp uses strong encryption to keep your data safe on our servers."
+      "The name of the Lord is a strong tower...so is the encryption used by GenesisApp to keep your data safe on our servers."
   }
 ];
