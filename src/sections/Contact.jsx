@@ -10,11 +10,11 @@ export const Contact = () => {
       <div className="px-8 mx-auto md:px-12 lg:px-32 max-w-7xl lg:pt-20">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
           <div>
-            <h1 className="pb-2 text-4xl font-normal tracking-tight text-transparent font-display lg:text-6xl text-primeBlue-300">
-              Need <span className="block text-primeBlue-300">additional</span>{" "}
-              <span className="block text-primeBlue-300">information?</span>
+            <h1 className="pb-2 text-4xl font-normal tracking-tight font-display lg:text-6xl text-primeBlue-300">
+              Need <span className="block text-primeBlue-300">Additional</span>{" "}
+              <span className="block text-primeBlue-300">Information?</span>
             </h1>
-            <p className="max-w-xs mt-4 text-onyx-500">
+            <p className="max-w-xs mt-4 text-onyx-500 text-lg">
               Contact us anytime and we will get back to you in a timely manner.
             </p>
           </div>

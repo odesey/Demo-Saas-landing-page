@@ -61,7 +61,7 @@ const faq = [
 export const Faq = () => {
   const { ref } = useSectionInView("#faq");
   return (
-    <section id="faq" className="scroll-m-20" ref={ref}>
+    <section id="faq" className="scroll-m-20 pt-24" ref={ref}>
       <div className="px-8 mx-auto md:px-12 lg:px-32 max-w-7xl lg:pt-20">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
           <div>

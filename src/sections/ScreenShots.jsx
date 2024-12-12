@@ -109,8 +109,11 @@ export const ScreenShots = () => {
     >
       <div className="container">
         <div className="flex-1 items-center align-middle relative flex justify-center mb-24">
-          <h2 className="text-3xl font-bold leading-[1.2] md:text-5xl relative">
-            GenesisApp in Action
+          <h2 className="text-3xl font-bold leading-[1.2] md:text-5xl left-[2vw] md:left-0 relative text-onyx-400">
+            Genesis
+            <span className="dark:text-onyx-50 text-onyx-700">
+              App in Action
+            </span>
           </h2>
         </div>
         <div className="flex flex-col">
