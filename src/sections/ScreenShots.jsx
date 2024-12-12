@@ -68,8 +68,8 @@ export const ScreenShots = () => {
       // 1024
       // 1280
       // 1980
-      1280: { slidesPerView: 3 },
-      1440: { slidesPerView: 3 }
+      1440: { slidesPerView: 3 },
+      1280: { slidesPerView: 3 }
     }
   };
 
@@ -107,7 +107,12 @@ export const ScreenShots = () => {
       className="h-screen w-full flex justify-center items-center align-middle"
       id="screenshots"
     >
-      <div className="container  ">
+      <div className="container">
+        <div className="flex-1 items-center align-middle relative flex justify-center mb-24">
+          <h2 className="text-3xl font-bold leading-[1.2] md:text-5xl relative">
+            GenesisApp in Action
+          </h2>
+        </div>
         <div className="flex flex-col">
           {/* Main slides */}
           <div className="flex relative mb-2">
@@ -117,6 +122,8 @@ export const ScreenShots = () => {
                   <div className="flex items-center justify-center bg-transparent">
                     <Image
                       // fill
+                      priority={false}
+                      placeholder="blur"
                       height={2340}
                       width={1080}
                       sizes="(min-width: 1620px) 1360px, (min-width: 900px) 660px, (min-width: 660px), (min-width: 400px) 680px, calc(18.18vw + 500px), (min-width: 350px)"
