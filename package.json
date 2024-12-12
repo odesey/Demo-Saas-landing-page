@@ -1,5 +1,5 @@
 {
-  "name": "saas-landing-page",
+  "name": "genesis-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -49,6 +49,7 @@
     "embla-carousel-react": "^8.3.0",
     "framer-motion": "^11.11.7",
     "hamburger-react": "^2.5.1",
+    "hi-contact": "^0.2.6",
     "input-otp": "^1.2.3",
     "lucide-react": "^0.363.0",
     "next": "^14.2.15",

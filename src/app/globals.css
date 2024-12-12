@@ -6,6 +6,18 @@
   --swiper-navigation-color: rgba(40, 149, 255, 0.6);
 }
 
+/* hi-contact {
+  --hi-bg-color: #e7f3ff;
+  --hi-text-color: rgb(187, 43, 43);
+  --hi-border-color: rgb(243, 244, 246, 0.1);
+  --hi-button-color: rgba(40, 149, 255, 0.6);
+  --hi-button-hover-color: rgb(24, 181, 129);
+  --hi-button-text-color: rgb(6, 5, 5);
+  --hi-button-text-hover: rgba(120, 116, 144, 1);
+  --hi-placeholder-text: rgb(184, 32, 32);
+  --hi-placeholder-color: rgb(6, 5, 5);
+} */
+
 .mySwiper.swiper {
   width: 200px;
   height: 180px;
@@ -169,8 +181,8 @@
   }
 }
 
-@media (min-width: 640px) {
-}
+/* @media (min-width: 640px) {
+} */
 
 @media (min-width: 768px) {
   .swiper-slide img {
@@ -203,6 +215,13 @@
     width: 260px;
     height: 200px;
     margin-top: 40px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .swiper-slide img {
+    width: 80%;
+    height: 100%;
   }
 }
 
