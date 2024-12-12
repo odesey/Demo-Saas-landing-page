@@ -30,7 +30,7 @@ const Privacy = () => {
   };
 
   const shiftRight = () => {
-    if (position < features.length - 1) {
+    if (position < FEATURES.length - 1) {
       setPosition((pv) => pv + 1);
     }
   };
@@ -39,9 +39,9 @@ const Privacy = () => {
     <section className="overflow-hidden py-60 max-w-full md:px-4 ">
       <div className="relative z-0 flex-1 items-center justify-center align-middle">
         <div className="-z-10 max-w-screen-lg w-full h-2/4 blur-2xl absolute">
-          <div className="absolute top-24 left-24 w-56 h-56 bg-violet-600 rounded-full mix-blend-multiply opacity-70 animate-blob filter blur-3xl"></div>
-          <div className="absolute hidden md:block bottom-2 right-1/4 w-56 h-56 bg-sky-600 rounded-full mix-blend-multiply opacity-70 animate-blob delay-1000 filter blur-3xl"></div>
-          <div className="absolute hidden md:block bottom-1/4 left-1/3 w-56 h-56 bg-pink-600 rounded-full mix-blend-multiply opacity-70 animate-blob delay-500 filter blur-3xl"></div>
+          <div className="absolute top-24 left-24 w-56 h-56 bg-violet-500 rounded-full mix-blend-multiply opacity-70 animate-blob filter blur-3xl"></div>
+          <div className="absolute hidden md:block bottom-2 right-1/4 w-56 h-56 bg-sky-500 rounded-full mix-blend-multiply opacity-70 animate-blob delay-1000 filter blur-3xl"></div>
+          <div className="absolute hidden md:block bottom-1/4 left-1/3 w-56 h-56 bg-pink-500 rounded-full mix-blend-multiply opacity-70 animate-blob delay-500 filter blur-3xl"></div>
         </div>
         <div className=" lg:mx-auto lg:max-w-6xl">
           <div className="mb-16 flex justify-between md:gap-4">
@@ -54,17 +54,25 @@ const Privacy = () => {
 
             <div className="flex relative justify-self-end items-center align-middle">
               <button onClick={shiftLeft}>
-                <Prev className="md:size-12 lg:mx-6 lg:size-16 size-12 fill-primeBlue-500 z-50 dark:fill-onyx-600" />
+                <Prev
+                  className={`md:size-12 lg:mx-6 lg:size-16 size-12 fill-primeBlue-500 z-50 dark:fill-onyx-600 ease-in-out transition-opacity duration-300 ${
+                    position === 0 ? "opacity-0" : ""
+                  }`}
+                />
               </button>
 
               <button onClick={shiftRight}>
-                <Next className="md:size-12 lg:ml-6 lg:size-16 size-12 fill-primeBlue-500 z-50 dark:fill-onyx-600" />
+                <Next
+                  className={`md:size-12 lg:ml-6 lg:size-16 size-12 fill-primeBlue-500 z-50 dark:fill-onyx-600 ease-in-out transition-opacity duration-300 ${
+                    position === FEATURES.length - 1 ? "opacity-0" : ""
+                  }`}
+                />
               </button>
             </div>
           </div>
 
           <div className="flex gap-4 mt-8 relative left-[2vw] md:left-0">
-            {features.map((feat, index) => (
+            {FEATURES.map((feat, index) => (
               <Feature
                 {...feat}
                 key={index}
@@ -94,12 +102,6 @@ const Feature = ({ position, index, title, description, Icon }) => {
       className={`rounded-[4px] relative flex min-h-[250px] w-10/12 max-w-lg shrink-0 flex-col justify-between overflow-hidden p-8 shadow-mdbl dark:shadow-big md:w-3/5 ${
         index % 2 ? "bg-onyx-800 text-white" : " bg-primeBlue-50"
       }`}
-      //     className={`
-      //   relative border
-      // border-primeBlue-50 px-4 my-2 py-2
-      // text-center rounded-sm sm:flex-1 dark:border-onyx-800
-      // shadow-mdbl dark:shadow-big min-h-[260px] md:min-h-[340px]
-      // `}
     >
       <div className="flex items-center dark:fill-white relative">
         <div className="flex-1 justify-start flex">
@@ -139,62 +141,40 @@ const Feature = ({ position, index, title, description, Icon }) => {
         {description}
       </p>
     </motion.div>
-    // <motion.div
-    //   animate={{ x: `${-translateAmt}%` }}
-    //   transition={{
-    //     ease: "easeInOut",
-
-    //     duration: 0.35
-    //   }}
-    //   className={`relative flex min-h-[250px] w-10/12 max-w-lg shrink-0 flex-col justify-between overflow-hidden p-8 shadow-lg md:w-3/5 ${
-    //     index % 2 ? "bg-black text-white" : " bg-white"
-    //   }`}
-    // >
-    //   {/* <Icon className="absolute right-2 top-2 text-7xl opacity-20" /> */}
-    //   {Icon}
-
-    //   <h3 className="mb-8 text-3xl font-bold">{title}</h3>
-
-    //   <p>{description}</p>
-    // </motion.div>
   );
 };
 const ICON_CLASS = "size-12";
 export default Privacy;
 
-const features = [
+const FEATURES = [
   {
     title: "Zero Ads",
     Icon: <Ads className={ICON_CLASS} />,
     description:
-      "There are absolutely zero ads in GenesisApp allowing you to focus on God's work!"
+      "There are absolutely zero ads in GenesisApp, allowing you to focus on God's work!"
   },
-
   {
     title: "Zero Tracking",
     Icon: <Location className={ICON_CLASS} />,
     description:
       "There is zero tracking in GenesisApp, GPS or otherwise! Only Jesus should be tracking you."
   },
-
   {
     title: "No Selling Church Data",
     Icon: <Handshake className={ICON_CLASS} />,
     description:
       "GenesisApp does not share or sell your church's data with any third parties."
   },
-
   {
     title: "End to End Encryption",
     Icon: <Https className={ICON_CLASS} />,
     description:
-      "While there is no secret what God can do, all actions on the GenesisApp platform are made secret by encryption."
+      "While there is no secret what God can do, GenesisApp uses end to end encryption to keep your data...secret."
   },
-
   {
     title: "Encrypted at Rest",
     Icon: <FileLock className={ICON_CLASS} />,
     description:
-      "The name of the Lord is a strong tower...so is the encryption used by GenesisApp to keep your data safe on our servers."
+      "The name of the Lord is a strong tower...so is the strong encryption used by GenesisApp to keep your data safe on our servers."
   }
 ];
