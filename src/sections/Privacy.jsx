@@ -89,7 +89,10 @@ const Feature = ({ position, index, title, description, Icon }) => {
     >
       <div className="flex items-center dark:fill-white relative">
         <div className="flex-1 justify-start flex">
-          <h3 className="my-4 mx-4 text-3xl font-bold text-onyx-700 dark:text-onyx-300">
+          <h3
+            className={`my-4 mx-4 text-3xl font-bold text-onyx-700
+          ${index % 2 ? "text-onyx-100 dark:text-onyx-300" : ""}`}
+          >
             {title}
           </h3>
         </div>
@@ -99,12 +102,11 @@ const Feature = ({ position, index, title, description, Icon }) => {
       backdrop-blur-sm backdrop-filter
       items-center justify-center relative flex size-20 lg:size-24
       rounded-sm border
-      bg-[linear-gradient(135deg,_rgba(158,207,255,0.15),_rgba(255,255,255,0.4))]
-      [box-shadow:4px_4px_8px_rgba(158,207,255,0.3),_-4px_-4px_8px_#ffffff]
+
       ${
         index % 2
           ? "border-onyx-700 bg-onyx-800 text-onyx-300 bg-[linear-gradient(135deg,_rgba(31,30,38,0.2),_rgba(75,72,91,0.8))] [box-shadow:6px_6px_12px_rgba(0,0,0,0.1),_-6px_-6px_12px_rgba(0,0,0,0.01)]"
-          : " bg-primeBlue-50 border-white/75"
+          : " bg-primeBlue-50 border-white/75 bg-[linear-gradient(135deg,_rgba(158,207,255,0.15),_rgba(255,255,255,0.4))] [box-shadow:4px_4px_8px_rgba(158,207,255,0.3),_-4px_-4px_8px_#ffffff]"
       }
       `}
           >
@@ -115,7 +117,11 @@ const Feature = ({ position, index, title, description, Icon }) => {
         </div>
       </div>
 
-      <p className="m-4 dark:text-onyx-300 text-onyx-700 text-lg">
+      <p
+        className={`m-4 dark:text-onyx-300 text-onyx-700 text-lg  ${
+          index % 2 ? "text-onyx-100 dark:text-onyx-300" : ""
+        }`}
+      >
         {description}
       </p>
     </motion.div>
