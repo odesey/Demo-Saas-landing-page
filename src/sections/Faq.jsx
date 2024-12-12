@@ -5,54 +5,56 @@ import { useSectionInView } from "@/lib/hooks";
 
 const faq = [
   {
-    question: "What is brand identity design?",
+    question: "How can I claim my church in GenesisApp?",
     answer:
-      "Brand identity design is the process of creating a visual and emotional representation of a brand. It includes elements like logos, colors, typography, and messaging that collectively communicate a brand's essence and values."
+      "Please use the contact form to claim your church on the GenesisApp platform."
   },
   {
-    question: "Who can benefit from this course?",
+    question: "Can I be a member of more than one church?",
     answer:
-      "Our course is designed for marketers, entrepreneurs, designers, and anyone interested in mastering the art of brand identity design. Whether you're new to the field or looking to enhance your skills, our content caters to various skill levels."
+      "Currently you can be a member of only one church, this may change in the future."
   },
   {
-    question: "Are there any prerequisites for the course?",
-    answer:
-      "No prerequisites are required. Basic familiarity with design concepts and marketing principles can be helpful, but our course is structured to accommodate learners of all backgrounds."
+    question: "How can I get an invite code?",
+    answer: "Please use the contact form to request an invite code."
   },
   {
-    question: "How will this course help my marketing efforts?",
+    question:
+      "Will eveyone that uses GenesisApp be able to see my personal information?",
     answer:
-      "Understanding brand identity design equips you to create consistent and impactful branding materials that resonate with your target audience. This leads to better brand recognition, trust, and engagement, enhancing the effectiveness of your marketing campaigns."
+      "Absolutely NOT! By default, not even members of your church can see your personal information. You must share your information with other members of your church."
   },
   {
-    question: "What software/tools will I need?",
+    question: "How much does GenesisApp cost?",
     answer:
-      "While we recommend having access to design tools like Adobe Creative Suite, the course focuses more on the concepts and principles of brand identity design rather than specific software. However, having design tools can aid in applying what you learn."
+      "During our testing period, GenesisApp is free for 90 days. After that we expect pricing to be about ~$0.75 per member per month."
   },
   {
-    question: "Is the course self-paced?",
-    answer:
-      "Yes, our course is self-paced, allowing you to learn at your own convenience. This flexible approach enables you to balance your learning with other commitments."
+    question: "Are there any discounts available to small churches?",
+    answer: "Yes, GenesisApp will be free for churches with 25 members or less."
   },
   {
-    question: "Will I receive a certificate upon completion?",
+    question: "Are all features available to all churches?",
     answer:
-      "Yes, upon successfully completing the course and its assignments, you will receive a certificate of completion that recognizes your efforts in mastering brand identity design for marketers."
+      "Yes, GenesisApp wants churches to focus on spreading the gospel and not software features."
   },
   {
-    question: "How can I enroll in the course?",
+    question: "Can I be an administrator of multiple churches?",
     answer:
-      "Enrolling is simple! Just head to our enrollment page, choose the course, and follow the instructions to get started on your brand identity design journey."
+      "No, in this version of GenesisApp you can only be the administrator of a single church."
   },
   {
-    question: "Can I access the course materials after completion?",
-    answer:
-      "Yes, you'll have continued access to the course materials even after completing the course. You can revisit the content, refresh your knowledge, and reference the materials whenever needed."
+    question: "Can I upload pictures of my church?",
+    answer: "This option will be available in the near future."
   },
   {
-    question: "How can I get in touch for further questions?",
+    question: "Can my members upload pictures in the members directory?",
+    answer: "This option will be available in the near future."
+  },
+  {
+    question: "I have another question that was not answered here",
     answer:
-      "Feel free to reach out to our support team at [email@example.com](mailto:email@example.com) for any further questions, concerns, or assistance you may need."
+      "Please use the contact form to ask any additional questions you may have."
   }
 ];
 

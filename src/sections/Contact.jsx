@@ -1,6 +1,6 @@
 "use client";
 
-import "hi-contact";
+// import "hi-contact";
 import { useSectionInView } from "@/lib/hooks";
 
 export const Contact = () => {

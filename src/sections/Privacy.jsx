@@ -36,15 +36,17 @@ const Privacy = () => {
   };
 
   return (
-    <section className="overflow-hidden px-4 py-60">
-      <div className="mx-auto max-w-6xl">
-        <div className="mb-16 flex justify-between gap-4">
-          <h2 className="text-4xl font-bold leading-[1.2] md:text-5xl">
-            Your Privacy,{" "}
-            <span className="text-onyx-400">is Our Priority!</span>
-          </h2>
+    <section className="overflow-hidden py-60 max-w-full md:px-4">
+      <div className=" lg:mx-auto lg:max-w-6xl">
+        <div className="mb-16 flex justify-between md:gap-4">
+          <div className="flex-1 items-center align-middle relative flex">
+            <h2 className="text-3xl font-bold leading-[1.2] md:text-5xl left-[2vw] md:left-0 relative">
+              Church Privacy,{" "}
+              <span className="text-onyx-400">is Our Priority!</span>
+            </h2>
+          </div>
 
-          <div className="flex lg:bottom-4 relative">
+          <div className="flex relative justify-self-end items-center align-middle">
             <button onClick={shiftLeft}>
               <Prev className="md:size-12 lg:mx-6 lg:size-16 size-12 fill-primeBlue-500 z-50 dark:fill-onyx-600" />
             </button>
@@ -55,7 +57,7 @@ const Privacy = () => {
           </div>
         </div>
 
-        <div className="flex gap-4 mt-8 relative">
+        <div className="flex gap-4 mt-8 relative left-[2vw] md:left-0">
           {features.map((feat, index) => (
             <Feature {...feat} key={index} position={position} index={index} />
           ))}
@@ -91,7 +93,7 @@ const Feature = ({ position, index, title, description, Icon }) => {
         <div className="flex-1 justify-start flex">
           <h3
             className={`my-4 mx-4 text-3xl font-bold text-onyx-700
-          ${index % 2 ? "text-onyx-100 dark:text-onyx-300" : ""}`}
+          ${index % 2 ? "text-white/60 dark:text-onyx-300" : ""}`}
           >
             {title}
           </h3>
@@ -119,7 +121,7 @@ const Feature = ({ position, index, title, description, Icon }) => {
 
       <p
         className={`m-4 dark:text-onyx-300 text-onyx-700 text-lg  ${
-          index % 2 ? "text-onyx-100 dark:text-onyx-300" : ""
+          index % 2 ? "text-white/60 dark:text-onyx-300" : ""
         }`}
       >
         {description}
@@ -151,43 +153,36 @@ export default Privacy;
 const features = [
   {
     title: "Zero Ads",
-
     Icon: <Ads className={ICON_CLASS} />,
-
-    description: "There are zero ads in GenesisApp"
+    description:
+      "There are absolutely zero ads in GenesisApp allowing you to focus on God's work!"
   },
 
   {
     title: "Zero Tracking",
-
     Icon: <Location className={ICON_CLASS} />,
-
-    description: "There is zero tracking in GenesisApp, GPS or otherwise"
+    description:
+      "There is zero tracking in GenesisApp, GPS or otherwise! Only Jesus should be tracking you."
   },
 
   {
-    title: "No selling your data",
-
+    title: "No Selling Church Data",
     Icon: <Handshake className={ICON_CLASS} />,
-
     description:
-      "GenesisApp does not share or sell your data with any third parties"
+      "GenesisApp does not share or sell your church's data with any third parties."
   },
 
   {
     title: "End to End Encryption",
-
     Icon: <Https className={ICON_CLASS} />,
-
     description:
-      "GenesisApp uses end to end encryption, your data is secure in transit"
+      "While there is no secret what God can do, all actions on the GenesisApp platform are encrypted."
   },
 
   {
-    title: "Encryption at rest",
-
+    title: "Encryption at Rest",
     Icon: <FileLock className={ICON_CLASS} />,
-
-    description: "GenesisApp keeps your data safe by encrypting on our servers"
+    description:
+      "The name of the Lord is a strong tower...GenesisApp uses strong encryption to keep your data safe on our servers."
   }
 ];

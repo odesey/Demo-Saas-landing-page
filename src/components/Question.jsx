@@ -29,7 +29,7 @@ export const Question = ({ title, children, defaultOpen = false }) => {
           //     color: "rgba(3, 6, 23, 0)"
           //   }
           // }}
-          className=" text-left text-lg font-medium text-onyx-400 "
+          className=" text-left text-lg font-medium text-primeBlue-300 "
         >
           {title}
         </motion.span>
