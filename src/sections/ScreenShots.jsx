@@ -68,7 +68,8 @@ export const ScreenShots = () => {
       // 1024
       // 1280
       // 1980
-      1280: { slidesPerView: 3 }
+      1280: { slidesPerView: 3 },
+      1440: { slidesPerView: 3 }
     }
   };
 
@@ -131,7 +132,7 @@ export const ScreenShots = () => {
           <div className="flex relative mt-2 items-center justify-center align-middle">
             <button
               onClick={handlePrev}
-              className="flex absolute -left-4 md:left-40 lg:left-96 top-12"
+              className="flex absolute -left-4 md:left-40 lg:left-96 top-12 lg:top-20"
             >
               <Prev className="md:size-16 lg:size-20 size-12 fill-primeBlue-500 z-50 dark:fill-onyx-600" />
             </button>
@@ -158,7 +159,7 @@ export const ScreenShots = () => {
             </Swiper>
             <button
               onClick={handleNext}
-              className="absolute -right-4 md:right-40 lg:right-96 top-12"
+              className="absolute -right-4 md:right-40 lg:right-96 top-12 lg:top-20"
             >
               <Next className="md:size-16 lg:size-20 size-12 fill-primeBlue-500 z-50 dark:fill-onyx-600" />
             </button>

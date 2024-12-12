@@ -1,0 +1,38 @@
+"use client";
+
+import "hi-contact";
+import { useSectionInView } from "@/lib/hooks";
+
+export const Contact = () => {
+  const { ref } = useSectionInView("#contact");
+  return (
+    <section id="contact" className="scroll-m-20 min-h-96" ref={ref}>
+      <div className="px-8 mx-auto md:px-12 lg:px-32 max-w-7xl lg:pt-20">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
+          <div>
+            <h1 className="pb-2 text-4xl font-normal tracking-tight text-transparent font-display lg:text-6xl text-primeBlue-300">
+              Need <span className="block text-primeBlue-300">additional</span>{" "}
+              <span className="block text-primeBlue-300">information?</span>
+            </h1>
+            <p className="max-w-xs mt-4 text-onyx-500">
+              Contact us anytime and we will get back to you in a timely manner.
+            </p>
+          </div>
+          <div className="relative w-full mx-auto space-y-1 text-base">
+            {/* <hi-contact
+              className="bg-red-600"
+              username="genesisapp"
+              otp
+              corners="rounded"
+            ></hi-contact> */}
+            {/* {faq.map((template, index) => (
+              <div className="cursor-pointer group" key={index}>
+                <Question title={template.question}>{template.answer}</Question>
+              </div>
+            ))} */}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};

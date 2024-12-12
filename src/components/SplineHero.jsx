@@ -17,8 +17,8 @@ export default function SplineHero() {
       // style={{ width: "30vw" }}
     >
       <Spline
-        // scene={url("/matte_prod_v_1.spline")}
-        scene="https://prod.spline.design/uyXGqgC2Npyf3lRi/scene.splinecode"
+        scene="/scene.splinecode"
+        // scene="https://prod.spline.design/uyXGqgC2Npyf3lRi/scene.splinecode"
         // onLoad={onLoad}
       />
     </div>
