@@ -2,8 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-// import { FiArrowRight } from "react-icons/fi";
-import { twMerge } from "tailwind-merge";
 
 export const DarkGridHero = () => {
   return (
