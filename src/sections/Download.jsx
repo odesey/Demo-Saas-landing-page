@@ -18,7 +18,7 @@ const Download = () => {
       //   // backgroundSize: "contain",
       //   objectFit: "contain"
       // }}
-      className="scroll-m-20 min-h-screen md:min-h-[90vh] w-full  items-center justify-center align-middle relative flex overflow-hidden"
+      className="scroll-m-20 min-h-screen md:min-h-[90vh] w-full  items-center justify-center align-middle relative flex overflow-hidden mt-40 md:mt-4"
       ref={ref}
     >
       {/* <Image
