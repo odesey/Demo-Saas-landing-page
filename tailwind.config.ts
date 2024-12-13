@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import fluid, { extract, screens, fontSize } from "fluid-tailwind";
 const defaultTheme = require("tailwindcss/defaultTheme");
 const colors = require("tailwindcss/colors");
 
@@ -7,12 +8,15 @@ const config = {
   future: {
     hoverOnlyWhenSupported: true
   },
-  content: [
-    "./src/sections/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}"
-  ],
+  content: {
+    files: [
+      "./src/sections/**/*.{js,ts,jsx,tsx,mdx}",
+      "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+      "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+      "./src/app/**/*.{js,ts,jsx,tsx,mdx}"
+    ],
+    extract
+  },
   prefix: "",
   theme: {
     boxShadow: {
@@ -23,11 +27,13 @@ const config = {
       massive:
         "0px 64px 64px rgba(0, 0, 0, 0.15), 0px 32px 32px rgba(0, 0, 0, 0.15), 0px 16px 16px rgba(0, 0, 0, 0.15), 0px 8px 8px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.15);"
     },
-    screens: {
-      sm: "375px",
-      md: "768px",
-      lg: "1200px"
-    },
+    screens,
+    fontSize,
+    // screens: {
+    //   sm: "375px",
+    //   md: "768px",
+    //   lg: "1200px"
+    // },
     container: {
       center: true,
       padding: "2rem",
@@ -37,6 +43,7 @@ const config = {
     },
     extend: {
       screens: {
+        xs: "20rem",
         betterhover: { raw: "(hover: hover)" }
       },
       container: {
@@ -151,7 +158,7 @@ const config = {
       }
     }
   },
-  plugins: [require("tailwindcss-animate")]
+  plugins: [fluid, require("tailwindcss-animate")]
 } satisfies Config;
 
 export default config;

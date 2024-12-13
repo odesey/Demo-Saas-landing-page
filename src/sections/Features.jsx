@@ -193,11 +193,7 @@ export const Features = () => {
   return (
     <section ref={ref} className="relative scroll-mt-24 mb-12" id="features">
       <div className="container">
-        <div
-          className="text-center "
-          data-aos="fade-up"
-          data-aos-duration="2000"
-        >
+        <div className="text-center ">
           <h3 className="text-6xl font-display font-semibold">Key Features</h3>
           <p className="text-onyx-300 mt-8 text-xl">
             Here are some of the ways that GenesisApp helps your church

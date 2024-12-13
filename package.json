@@ -10,6 +10,7 @@
     "pages:build": "npx @cloudflare/next-on-pages"
   },
   "dependencies": {
+    "@fluid-tailwind/tailwind-merge": "^0.0.3",
     "@hookform/resolvers": "^3.3.4",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-alert-dialog": "^1.0.5",
@@ -79,6 +80,7 @@
     "autoprefixer": "^10.0.1",
     "eslint": "^8.57.1",
     "eslint-config-next": "^14.2.15",
+    "fluid-tailwind": "^1.0.4",
     "postcss": "^8",
     "tailwind-merge": "^2.5.3",
     "tailwindcss": "^3.3.0",

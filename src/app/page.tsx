@@ -9,6 +9,7 @@ import TabsFeatures from "@/sections/TabsFeatures";
 import Nav3 from "@/sections/Nav3";
 import { ScreenShots } from "@/sections/ScreenShots";
 import { Contact } from "@/sections/Contact";
+import Download from "@/sections/Download";
 import Privacy from "@/sections/Privacy";
 import Carousel from "@/sections/Carousel";
 
@@ -25,7 +26,7 @@ export default function Home() {
       <Features />
       <Privacy />
       <ScreenShots />
-      {/* <Carousel /> */}
+      <Download />
       <Faq />
       <Contact />
     </main>
