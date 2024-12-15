@@ -63,12 +63,12 @@ export const images = [
     cardDescription:
       "Let your community know how your church can be a blessing to them"
   },
-  {
-    src: DeleteMember,
-    alt: "Delete Member Picture",
-    cardTitle: "Digital Disfellowship",
-    cardDescription: "For the Judases in your congregation"
-  },
+  // {
+  //   src: DeleteMember,
+  //   alt: "Delete Member Picture",
+  //   cardTitle: "Digital Disfellowship",
+  //   cardDescription: "For the Judases in your congregation"
+  // },
   {
     src: French,
     alt: "French Picture",
