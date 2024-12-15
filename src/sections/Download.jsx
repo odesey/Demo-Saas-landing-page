@@ -31,8 +31,8 @@ const Download = () => {
         style={{
           backgroundImage: `url(${DownloadBG.src})`,
           backgroundRepeat: "no-repeat",
-          // backgroundSize: "contain",
-          objectFit: "fit"
+          backgroundSize: "scale-down"
+          // objectFit: "fit"
         }}
       >
         <div className="flex flex-1 relative md:flex-row h-full flex-col">

@@ -2,16 +2,12 @@ import { NewHero } from "@/sections/NewHero";
 import React from "react";
 import { Faq } from "@/sections/Faq";
 import { Features } from "@/sections/Features";
-import { Features3 } from "@/sections/Features3";
-import { Features2 } from "@/sections/Features2";
+import { ScrollFeature } from "@/sections/ScrollFeature";
 import { NewNav } from "@/sections/NewNav";
-import TabsFeatures from "@/sections/TabsFeatures";
-import Nav3 from "@/sections/Nav3";
 import { ScreenShots } from "@/sections/ScreenShots";
 import { Contact } from "@/sections/Contact";
 import Download from "@/sections/Download";
 import Privacy from "@/sections/Privacy";
-import Carousel from "@/sections/Carousel";
 
 export const runtime = "edge";
 
@@ -22,8 +18,8 @@ export default function Home() {
       <NewNav />
       {/* <GlassNavigation /> */}
       <NewHero />
-      {/* <TabsFeatures /> */}
       <Features />
+      {/* <ScrollFeature /> */}
       <Privacy />
       <ScreenShots />
       <Download />
