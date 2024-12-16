@@ -67,7 +67,7 @@ export const FeatureCard = ({ index, icon, title, description }) => {
         dark:[box-shadow:6px_6px_12px_rgba(0,0,0,0.1),_-6px_-6px_12px_rgba(0,0,0,0.01)]
         `}
         >
-          <div className="fill-primeBlue-500 backdrop-blur-sm backdrop-filter">
+          <div className="fill-primeBlue-300 backdrop-blur-sm backdrop-filter">
             {icon}
           </div>
         </div>
