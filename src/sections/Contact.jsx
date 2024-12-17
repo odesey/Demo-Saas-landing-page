@@ -6,7 +6,7 @@ import { useSectionInView } from "@/lib/hooks";
 export const Contact = () => {
   const { ref } = useSectionInView("#contact");
   return (
-    <section id="contact" className="scroll-m-20 min-h-96" ref={ref}>
+    <section id="contact" className="scroll-m-20 min-h-96 mt-32" ref={ref}>
       <div className="px-8 mx-auto md:px-12 lg:px-32 max-w-7xl lg:pt-20">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
           <div>

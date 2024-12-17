@@ -36,7 +36,7 @@ const Privacy = () => {
   };
 
   return (
-    <section className="overflow-hidden py-60 max-w-full md:px-4 ">
+    <section className="overflow-hidden py-32 max-w-full md:px-4 md:mb-32">
       <div className="relative z-0 flex-1 items-center justify-center align-middle">
         <div className="-z-10 max-w-screen-lg w-full h-2/4 blur-2xl absolute top-52">
           <div className="absolute left-24 w-56 h-56 bg-violet-500 rounded-full mix-blend-multiply opacity-70 animate-blob filter blur-3xl"></div>

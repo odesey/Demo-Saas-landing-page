@@ -10,6 +10,7 @@ import {
 import { useClickAway } from "react-use";
 import { Squash as Hamburger } from "hamburger-react";
 import { useMediaQuery } from "react-responsive";
+import Link from "next/link";
 
 import { ThemeChanger } from "@/app/Theme-changer";
 import { routes } from "@/data/routes";
@@ -17,7 +18,7 @@ import Logo from "@/assets/logo.svg";
 import { useActiveSectionContext } from "@/context/active-section";
 
 let NAV_TITLES = [
-  { hash: "#home", label: "" },
+  // { hash: "#home", label: "" },
   { hash: "#features", label: "Features" },
   { hash: "#screenshots", label: "Screenshots" },
   { hash: "#download", label: "Download" },
@@ -25,7 +26,7 @@ let NAV_TITLES = [
   { hash: "#contact", label: "Contact" }
 ];
 
-export const NewNav = () => {
+export const NewNav2 = () => {
   const { activeTab, setActiveTab, setLastClickedTime } =
     useActiveSectionContext();
 
@@ -57,7 +58,7 @@ export const NewNav = () => {
 
   const variants = {
     open: {
-      height: 490
+      height: 520
     },
     closed: {
       height: 70
@@ -87,22 +88,20 @@ export const NewNav = () => {
           <div className="items-top flex flex-row justify-between md:justify-start sm:pt-1">
             <a
               className="inline-flex text-md items-top font-display pl-2 hover:text-white/50"
-              href="/"
+              href="#home"
             >
               <Logo className="size-8" />
             </a>
           </div>
           <div className="space-x-1 hidden md:block">
-            <nav className="flex lg:gap-6 text-sm md:gap-2">
+            <nav className="flex lg:gap-6 text-sm md:gap-2 space-x-1">
               {NAV_TITLES.map((tab) => (
-                <button
+                <span
                   key={tab.hash}
-                  onClick={() => setActiveTab(tab.hash)}
+                  // onClick={() => setActiveTab(tab.hash)}
                   className={`${
-                    activeTab === tab.hash
-                      ? "font-bold"
-                      : "hover:text-[#2895ff] font-medium"
-                  } relative rounded-full px-3 py-1.5 text-lg transition focus-visible:outline-2`}
+                    activeTab === tab.hash ? "font-bold" : ""
+                  } relative rounded-full px-3 py-1.5 text-sm font-medium  outline-sky-400 transition focus-visible:outline-2`}
                   style={{
                     WebkitTapHighlightColor: "transparent"
                   }}
@@ -110,10 +109,14 @@ export const NewNav = () => {
                   {activeTab === tab.hash && (
                     <motion.span
                       layoutId="bubble"
-                      className={`absolute inset-[0.5px]
-                        z-10 shadow-mdbl bg-gradient-to-tr
-                        from-primeBlue-500 via-primeBlue-400 to-primeBlue-300
-                        dark:mix-blend-screen mix-blend-multiply p-[1.5px]
+                      className={`
+                        absolute inset-0  mix-blend-difference
+                        backdrop-blur-sm backdrop-filter
+                        border border-white/75 dark:border-onyx-600 bg-primeBlue-50
+                        dark:bg-onyx-950 dark:bg-[linear-gradient(135deg,_rgba(31,30,38,0.2),_rgba(75,72,91,0.8))]
+                        bg-[linear-gradient(135deg,_rgba(158,207,255,0.15),_rgba(255,255,255,0.4))]
+                        [box-shadow:4px_4px_8px_rgba(158,207,255,0.3),_-4px_-4px_8px_#ffffff]
+                        dark:[box-shadow:6px_6px_12px_rgba(0,0,0,0.1),_-6px_-6px_12px_rgba(0,0,0,0.01)]
                         `}
                       style={{ borderRadius: 9999 }}
                       transition={{
@@ -121,12 +124,19 @@ export const NewNav = () => {
                         bounce: 0.2,
                         duration: 0.6
                       }}
-                    >
-                      <span className="bg-primeBlue-50 dark:bg-onyx-900 flex h-full w-full rounded-full"></span>
-                    </motion.span>
+                    />
                   )}
-                  {tab.label}
-                </button>
+                  <Link
+                    className={`relative text-xl tracking-tight p-1 ${
+                      activeTab === tab.hash
+                        ? "font-bold text-primeBlue-500"
+                        : ""
+                    }`}
+                    href={tab.hash}
+                  >
+                    {tab.label}
+                  </Link>
+                </span>
               ))}
             </nav>
           </div>
@@ -148,9 +158,7 @@ export const NewNav = () => {
                     className="fixed left-0 shadow-4xl right-0 top-[3.5rem] p-5 pt-0 justify-center items-center align-middle"
                   >
                     <ul className="grid gap-2">
-                      {routes.map((route, idx) => {
-                        // const { Title } = route;
-
+                      {NAV_TITLES.map((route, idx) => {
                         return (
                           <motion.li
                             initial={{ scale: 0, opacity: 0 }}
@@ -161,21 +169,21 @@ export const NewNav = () => {
                               damping: 25,
                               delay: 0.1 + idx / 30
                             }}
-                            key={route.title}
+                            key={route.hash}
                             className="w-full p-[0.08rem] rounded-xl "
                           >
-                            <a
+                            <Link
                               onClick={() => setOpen((prev) => !prev)}
                               className={
                                 "flex items-top justify-between w-full p-5 text-center text-black-200 duration-500 ease-in-out transform border border-white dark:border-onyx-800 dark:bg-onyx-900 rounded-xl bg-transparent backdrop-blur-md shadow-md backdrop-filter"
                               }
-                              href={route.href}
+                              href={route.hash}
                             >
                               <span className="flex gap-1 text-lg">
-                                {route.title}
+                                {route.label}
                               </span>
                               {/* <Icon className="text-xl" /> */}
-                            </a>
+                            </Link>
                           </motion.li>
                         );
                       })}
