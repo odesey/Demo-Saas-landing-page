@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, Suspense } from "react";
 import { ReactLenis, useLenis } from "lenis/react";
 import { usePathname, useSearchParams } from "next/navigation";
 
@@ -25,13 +25,15 @@ const SmoothScroll = ({ children }) => {
   }, [pathname, searchParams, lenis]);
 
   return (
-    <ReactLenis
-      root
-      options={{ lerp: 0.05, wheelMultiplier: 1.5 }}
-      ref={lenisRef}
-    >
-      {children}
-    </ReactLenis>
+    <Suspense fallback={<div>Loading...</div>}>
+      <ReactLenis
+        root
+        options={{ lerp: 0.05, wheelMultiplier: 1.5 }}
+        ref={lenisRef}
+      >
+        {children}
+      </ReactLenis>
+    </Suspense>
   );
 };
 
