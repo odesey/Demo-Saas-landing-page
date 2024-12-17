@@ -4,7 +4,7 @@ import { useTransform, motion, useScroll } from "framer-motion";
 import { useRef } from "react";
 import MyChurch from "@/public/images/MyChurch.jpg";
 
-const Card = ({
+const FeatureScrollCard = ({
   i,
   title,
   description,
@@ -31,14 +31,19 @@ const Card = ({
     >
       <motion.div
         style={{
-          backgroundColor: color,
           scale,
           top: `calc(20vh + ${i * 25}px)`
         }}
-        className="flex flex-col relative top-[-25%] h-[500px] w-[1000px] rounded-[25px] p-[50px] origin-top"
+        className="flex flex-col relative top-[-25%] h-[500px] w-full rounded-[8px] origin-top border bg-primeBlue-50
+        dark:bg-onyx-950
+    border-primeBlue-50 p-4 md:p-6
+    text-center sm:flex-1 dark:border-onyx-800
+    shadow-mdbl dark:shadow-big min-h-[260px] md:min-h-[340px]"
       >
-        <h2 className="m-0 text-xl text-center">{title}</h2>
-        <div className="flex h-full mt-12 gap-12">
+        <h2 className="m-2 md:m-4 text-2xl md:text3xl lg:text-4xl text-start font-bold">
+          {title}
+        </h2>
+        <div className="flex h-full mt-12 ">
           <div className="w-[40%] relative top-[10%]">
             <p className="text-lg">{description}</p>
             <span className="flex gap-[5px] items-center">
@@ -75,4 +80,4 @@ const Card = ({
   );
 };
 
-export default Card;
+export default FeatureScrollCard;

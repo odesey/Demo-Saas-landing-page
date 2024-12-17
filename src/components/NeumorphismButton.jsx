@@ -1,15 +1,14 @@
 import { forwardRef } from "react";
 
-const NeumorphismButton = forwardRef(function (props, ref) {
-  // 1-800-299-5865
-  // const NeumorphismButton = (props) => {
+// const NeumorphismButton = forwardRef(function (props, ref) {
+// 1-800-299-5865
+const NeumorphismButton = (props) => {
   const { label, selected, setSelected, index } = props;
   return (
     <button
-      ref={ref}
+      // ref={ref}
       onClick={() => setSelected(index)}
       className={`
-            z-10
           mx-1 md:mx-4 lg:mx-10
           px-4 py-2 rounded-[8px]
           flex items-center gap-2
@@ -25,7 +24,7 @@ const NeumorphismButton = forwardRef(function (props, ref) {
       `}
     >
       <p
-        className={`text-sm tracking-tighter md:tracking-wide lg:text-2xl lg:p-2 min-w-16 md:min-w-24 z-12 ${
+        className={`text-sm tracking-tighter md:tracking-wide lg:text-2xl lg:p-2 min-w-16 md:min-w-24 ${
           selected === index ? "font-bold text-primeBlue-400" : "font-semibold"
         }`}
       >
@@ -33,6 +32,6 @@ const NeumorphismButton = forwardRef(function (props, ref) {
       </p>
     </button>
   );
-  // };
-});
+};
+// });
 export default NeumorphismButton;

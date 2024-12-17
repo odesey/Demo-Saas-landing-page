@@ -185,7 +185,8 @@ const NEUMORPH_TABS = [
   }
 ];
 
-const Features = () => {
+// const Features = forwardRef(function FeatureSection(props, ref) {
+export const Features = () => {
   const [selected, setSelected] = useState(0);
 
   const { ref } = useSectionInView("#features");
@@ -195,25 +196,9 @@ const Features = () => {
     offset: ["start start", "end end"]
   });
 
-  const [width, setWidth] = useState(window.innerWidth);
-
-  const isMobile = width <= 600;
-
-  useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  // console.log("WIDTH: ---> ", width);
-
   return (
-    <section
-      ref={ref}
-      className="relative scroll-mt-24 mb-12 md:min-h-[95vh]"
-      id="features"
-    >
-      <div className="container relative md:min-h-[95vh]">
+    <section ref={ref} className="relative scroll-mt-24 mb-12" id="features">
+      <div className="container relative">
         <div className="text-center">
           <h3 className="text-6xl font-display font-semibold ">Key Features</h3>
           <p className="text-onyx-300 mt-8 text-xl ">
@@ -221,9 +206,9 @@ const Features = () => {
             communicate better.
           </p>
         </div>
-        <div className=" w-full sticky top-20 md:relative md:top-0 z-0 mb-[50vh] md:mb-0 md:justify-center">
+        <div className=" w-full sticky top-20 md:relative md:top-0 z-0">
           <LogoPing />
-          <div className="flex items-center w-full justify-center md:mb-20 z-[-2] ">
+          <div className="flex items-center w-full justify-center mb-[50vh] md:mb-0 z-[-5]">
             {FEATURE_TABS.map((tab, index) => (
               <NeumorphismButton
                 key={index}
@@ -236,19 +221,7 @@ const Features = () => {
             ))}
           </div>
         </div>
-        {/* <div className="flex items-center w-full justify-center mb-[50vh] md:mb-0 z-[-2] sticky top-60 bg-red-600 ">
-          {FEATURE_TABS.map((tab, index) => (
-            <NeumorphismButton
-              key={index}
-              label={tab.label}
-              selected={selected}
-              setSelected={setSelected}
-              id={tab.id}
-              index={index}
-            />
-          ))}
-        </div> */}
-        <div className="flex w-full sticky top-0 z-[-5]">
+        <div className="flex w-full bg-red-600 sticky top-0 z-[-5] pb-20">
           <AnimatePresence mode="wait">
             {NEUMORPH_TABS.map((tab, index) => {
               return selected === index ? (
@@ -259,32 +232,31 @@ const Features = () => {
                   exit={{ opacity: 0, scale: 0.5 }}
                   key={index}
                 >
-                  <FeatureTab
-                    selected={selected}
-                    progress={scrollYProgress}
-                    isMobile={isMobile}
-                  />
+                  <FeatureTab selected={selected} progress={scrollYProgress} />
                 </motion.div>
               ) : undefined;
             })}
           </AnimatePresence>
         </div>
-      </div>
-      <div className="text-center max-w-3xl lg:mx-auto mt-16">
-        <h4 className="text-2xl font-display">Plus much, much more!</h4>
+        <div className="text-center max-w-3xl lg:mx-auto mt-24 pt-24">
+          <h4 className="text-2xl font-display">Plus much, much more!</h4>
+        </div>
       </div>
     </section>
   );
 };
 // });
 
-const FeatureTab = ({ selected, progress, isMobile }) => (
+const FeatureTab = ({ selected, progress }) => (
+  // const FeatureTab = forwardRef(function FeatureTab(props, ref) {
+  // const {selected, progress} = props;
   <div className="flex w-full relative ">
     <div className="grid md:grid-cols-2 gap-6 lg:grid-cols-3 lg:gap-x-6 lg:gap-y-4 lg:text-center mx-8 justify-start align-top items-start">
       {FEATURES[selected].map((feature, index) => {
         const targetScale = 1 - (FEATURES[selected].length - index) * 0.05;
         return (
           <FeatureCard
+            // ref={ref}
             index={index}
             key={feature.id}
             title={feature.title}
@@ -294,12 +266,10 @@ const FeatureTab = ({ selected, progress, isMobile }) => (
             targetScale={targetScale}
             progress={progress}
             range={[index * (100 / FEATURES[selected].length), 1]}
-            isMobile={isMobile}
           />
         );
       })}
     </div>
   </div>
 );
-
-export default Features;
+// });
