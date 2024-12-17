@@ -5,8 +5,8 @@ import { usePathname, useSearchParams } from "next/navigation";
 
 const SmoothScroll = ({ children }) => {
   const lenisRef = useRef();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
+  // const pathname = usePathname();
+  // const searchParams = useSearchParams();
 
   const lenis = useLenis();
 
@@ -22,18 +22,18 @@ const SmoothScroll = ({ children }) => {
 
   useEffect(() => {
     lenis?.scrollTo(0, { immediate: true });
-  }, [pathname, searchParams, lenis]);
+  }, []);
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <ReactLenis
-        root
-        options={{ lerp: 0.05, wheelMultiplier: 1.5 }}
-        ref={lenisRef}
-      >
-        {children}
-      </ReactLenis>
-    </Suspense>
+    // <Suspense fallback={<div>Loading...</div>}>
+    <ReactLenis
+      root
+      options={{ lerp: 0.05, wheelMultiplier: 1.5 }}
+      ref={lenisRef}
+    >
+      {children}
+    </ReactLenis>
+    // </Suspense>
   );
 };
 
