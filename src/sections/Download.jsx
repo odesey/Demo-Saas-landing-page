@@ -147,7 +147,7 @@ const FloatingPhone = () => {
           duration: 2,
           ease: "easeInOut"
         }}
-        className="relative h-96 w-48 rounded-[24px] border-2 border-b-4 border-r-4 dark:border-onyx-500 border-primeBlue-300 border-l-neutral-200 border-t-neutral-200 bg-primeBlue-100 p-1 pl-[3px] pt-[3px]"
+        className="overflow-hidden relative h-96 w-48 rounded-[24px] border-2 border-b-4 border-r-4 dark:border-onyx-500 border-primeBlue-300 border-l-neutral-200 border-t-neutral-200 bg-primeBlue-100 p-1 pl-[3px] pt-[3px]"
       >
         <Image
           src={MyChurch}

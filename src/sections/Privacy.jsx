@@ -44,9 +44,9 @@ const Privacy = () => {
           <div className="absolute hidden md:block bottom-1/4 left-1/3 w-56 h-56 bg-pink-500 rounded-full mix-blend-multiply opacity-70 animate-blob delay-500 filter blur-3xl"></div>
         </div>
         <div className=" lg:mx-auto lg:max-w-6xl">
-          <div className="flex justify-between md:gap-4 flex-col">
+          <div className="flex justify-between md:gap-4 xs:gap-2 flex-col">
             <div className="flex-1 items-center align-middle relative flex">
-              <h2 className="text-4xl font-bold leading-[1.2] md:text-5xl left-[2vw] md:left-0 relative">
+              <h2 className="xs:2text-xl text-4xl font-bold leading-[1.2] md:text-5xl left-[0] md:left-0 relative">
                 Church Privacy,{" "}
                 <span className="text-onyx-400">
                   {/* <br /> */}
@@ -60,7 +60,7 @@ const Privacy = () => {
                   className={`
                 ${position === 0 ? "opacity-0" : ""}
         backdrop-blur-sm backdrop-filter
-        items-center justify-center flex size-14 md:size-16 lg:size-20
+        items-center justify-center flex size-14 md:size-16 lg:size-20 xs:size-12
         rounded border border-white/75 dark:border-onyx-700 bg-primeBlue-50
         dark:bg-onyx-950 dark:bg-[linear-gradient(135deg,_rgba(31,30,38,0.2),_rgba(75,72,91,0.8))]
         bg-[linear-gradient(135deg,_rgba(158,207,255,0.15),_rgba(255,255,255,0.4))]
@@ -83,7 +83,7 @@ const Privacy = () => {
                 </div>
               </div>
 
-              <div className="flex relative items-center align-middle ml-8">
+              <div className="flex relative items-center align-middle ml-8 xs:ml-4">
                 {/* <button onClick={shiftLeft}>
                 <Prev
                   className={`md:size-12 lg:mx-6 lg:size-16 size-12 fill-primeBlue-500 z-50 dark:fill-onyx-600 ease-in-out transition-opacity duration-300 ${
@@ -96,7 +96,7 @@ const Privacy = () => {
                   className={`
                   ${position === FEATURES.length - 1 ? "opacity-0" : ""}
         backdrop-blur-sm backdrop-filter
-        items-center justify-center flex size-14 md:size-16 lg:size-20
+        items-center justify-center flex size-14 md:size-16 lg:size-20 xs:size-12
         rounded border border-white/75 dark:border-onyx-700 bg-primeBlue-50
         dark:bg-onyx-950 dark:bg-[linear-gradient(135deg,_rgba(31,30,38,0.2),_rgba(75,72,91,0.8))]
         bg-[linear-gradient(135deg,_rgba(158,207,255,0.15),_rgba(255,255,255,0.4))]
@@ -160,7 +160,7 @@ const Feature = ({ position, index, title, description, Icon }) => {
       <div className="flex items-center dark:fill-white relative">
         <div className="flex-1 justify-start flex">
           <h3
-            className={`my-4 mx-4 text-3xl font-bold text-onyx-700
+            className={`xs:m-2 m-4 text-3xl xs:text-2xl font-bold text-onyx-700
           ${index % 2 ? "text-white/60 dark:text-onyx-300" : ""}`}
           >
             {title}
@@ -170,8 +170,8 @@ const Feature = ({ position, index, title, description, Icon }) => {
           <div
             className={`
       backdrop-blur-sm backdrop-filter
-      items-center justify-center relative flex size-20 lg:size-24
-      rounded-sm border
+      items-center justify-center relative flex size-20 lg:size-24 xs:size-16
+      rounded-sm border xs:rounded
 
       ${
         index % 2
@@ -188,7 +188,7 @@ const Feature = ({ position, index, title, description, Icon }) => {
       </div>
 
       <p
-        className={`m-4 dark:text-onyx-300 text-onyx-700 text-lg  ${
+        className={`m-4 xs:m-2 dark:text-onyx-300 text-onyx-700 text-lg flex flex-1 relative items-center ${
           index % 2 ? "text-white/60 dark:text-onyx-300" : ""
         }`}
       >
@@ -197,7 +197,7 @@ const Feature = ({ position, index, title, description, Icon }) => {
     </motion.div>
   );
 };
-const ICON_CLASS = "size-12";
+const ICON_CLASS = "size-12 xs:size-10";
 export default Privacy;
 
 const FEATURES = [
@@ -214,10 +214,10 @@ const FEATURES = [
       "There is zero tracking in GenesisApp, GPS or otherwise! Only Jesus should be tracking you."
   },
   {
-    title: "No Selling Church Data",
+    title: "No Selling Data",
     Icon: <Handshake className={ICON_CLASS} />,
     description:
-      "GenesisApp does not share or sell your church's data with any third parties."
+      "GenesisApp does not share or sell your church's data or your data with any third parties."
   },
   {
     title: "End to End Encryption",
@@ -229,6 +229,6 @@ const FEATURES = [
     title: "Encrypted at Rest",
     Icon: <FileLock className={ICON_CLASS} />,
     description:
-      "The name of the Lord is a strong tower...so is the strong encryption used by GenesisApp to keep your data safe on our servers."
+      "The name of the Lord is a strong tower...so is the strong encryption used by GenesisApp to keep your data secure on our servers."
   }
 ];

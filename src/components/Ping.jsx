@@ -7,7 +7,7 @@ const LogoPing = () => {
   return (
     <div
       // ref={ref}
-      className="grid place-content-center my-32"
+      className="grid place-content-center my-16 xs:my-20  md:relative"
     >
       <Ping />
     </div>
@@ -19,7 +19,7 @@ const LOOP_DURATION = 7;
 
 const Ping = () => {
   return (
-    <div className="relative">
+    <div className="relative md:my-16 sm:my-32 xs:my-2">
       <Logo />
       <Band delay={0} />
       <Band delay={LOOP_DURATION * 0.25} />
@@ -38,7 +38,7 @@ const Logo = () => {
       viewBox="0 0 4167 4167"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
-      className="relative z-10 fill-white size-16"
+      className="relative z-10 fill-white size-16 xs:size-12"
       style={{
         fillRule: "evenodd",
         clipRule: "evenodd",
@@ -106,7 +106,7 @@ const Band = ({ delay }) => {
         ease: "linear",
         delay
       }}
-      className="absolute left-[50%] top-[50%] z-0 h-56 w-56 rounded-full border-[1px] border-primeBlue-200 bg-gradient-to-br from-primeBlue-500/50 to-primeBlue-500/20 shadow-xl shadow-primeBlue-500/40"
+      className="absolute left-[50%] top-[50%] z-0 size-56 xs:size-48 rounded-full border-[1px] border-primeBlue-200 bg-gradient-to-br from-primeBlue-500/50 to-primeBlue-500/20 shadow-xl shadow-primeBlue-500/40"
     />
   );
 };

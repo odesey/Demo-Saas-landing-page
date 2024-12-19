@@ -5,6 +5,70 @@
 :root {
   --swiper-navigation-color: rgba(40, 149, 255, 0.6);
 }
+/* https://codepen.io/techtomato/pen/MWeLqzB */
+button#neumorphism-button {
+  width: 300px;
+  display: block;
+  margin-top: 35px;
+  border: 2px solid #56ff47;
+  /* border: 2px solid #2895FF; */
+  cursor: pointer;
+  font-family: "Oxygen", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 5px;
+  color: #b1bcc8;
+  background-color: #0002;
+  border-radius: 14px;
+  padding: 16px 30px 16px 30px;
+  box-shadow: -8px -8px 17px rgba(140, 255, 102, 0.267), 10px 10px 30px #000,
+    inset -1px -1px 2px #000, inset 1px 1px 3px #fff4;
+  animation: shadowLeave 0.3s;
+}
+
+button#neumorphism-button:hover {
+  letter-spacing: 2.5px;
+  font-weight: 600;
+
+  color: white;
+  background-color: #267523;
+  text-shadow: 0 0 8px rgba(200, 255, 170, 0.333);
+  box-shadow: 1px 1px 5px #0001, -1px -1px 5px #fff1;
+  animation: shadowEnter 0.15s;
+}
+
+button#neumorphism-button:active {
+  box-shadow: inset 8px 8px 17px #0009, inset -6px -6px 13px #fff2;
+}
+@keyframes shadowEnter {
+  0% {
+    box-shadow: -7px -7px 25px rgba(135, 255, 102, 0.4), 10px 10px 30px #000,
+      inset -1px -1px 2px #000, inset 1px 1px 3px #fff4;
+    font-weight: 400;
+    letter-spacing: 5px;
+  }
+
+  100% {
+    box-shadow: 1px 1px 5px #0001, -1px -1px 5px #fff1;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+  }
+}
+
+@keyframes shadowLeave {
+  0% {
+    box-shadow: 0 0 0 #fff2, 0 0 #000, inset 0 -1px 0 #000, inset 0 0 0 #fff4;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+  }
+
+  100% {
+    box-shadow: -7px -7px 25px #fff2, 10px 10px 30px #000,
+      inset -1px -1px 2px #000, inset 1px 1px 3px #fff4;
+    font-weight: 400;
+    letter-spacing: 5px;
+  }
+}
 
 /* hi-contact {
   --hi-bg-color: #e7f3ff;
@@ -149,6 +213,18 @@
   .swiper-slide img {
     width: 100%;
     height: 100%;
+  }
+
+  .mySwiper.swiper {
+    width: 240px;
+    height: 240px;
+  }
+}
+
+@media (min-width: 375px) {
+  .swiper-slide img {
+    width: 70%;
+    height: 70%;
   }
 
   .mySwiper.swiper {
