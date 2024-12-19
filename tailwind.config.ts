@@ -43,8 +43,11 @@ const config = {
     },
     extend: {
       screens: {
-        xs: "20rem",
-        betterhover: { raw: "(hover: hover)" }
+        // ...screens,
+        // xs: "20rem",
+        xs: "370px",
+        ...defaultTheme.screens
+        // betterhover: { raw: "(hover: hover)" }
       },
       container: {
         center: true,

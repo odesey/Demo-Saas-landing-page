@@ -104,12 +104,12 @@ export const ScreenShots = () => {
   return (
     <section
       ref={ref}
-      className="h-screen w-full flex justify-center items-center align-middle"
+      className="h-screen w-full flex justify-center items-center align-middle md:h-[95vh]"
       id="screenshots"
     >
       <div className="container">
         <div className="flex-1 items-center align-middle relative flex justify-center mb-24">
-          <h2 className="text-3xl font-bold leading-[1.2] md:text-5xl left-[2vw] md:left-0 relative text-onyx-400">
+          <h2 className="text-3xl xs:text-2xl font-bold leading-[1.2] md:text-5xl left-[2vw] md:left-0 relative text-onyx-400">
             Genesis
             <span className="dark:text-onyx-50 text-onyx-700">
               App in Action
