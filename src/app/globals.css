@@ -6,10 +6,10 @@
   --swiper-navigation-color: rgba(40, 149, 255, 0.6);
 }
 
-.required:before {
+/* .required:before {
   content: "*";
   font-weight: bold;
-}
+} */
 
 .magicpattern {
   z-index: -1;

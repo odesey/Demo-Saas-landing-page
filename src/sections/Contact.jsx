@@ -25,12 +25,6 @@ export const Contact = () => {
           </div>
           <div className="relative w-full mx-auto space-y-1 text-base">
             <ContactForm />
-            {/* <button
-              id="neumorphism-button"
-              // className="bg-primeBlue-50 dark:bg-onyx-900 border-primeBlue-500 border-2 text-primeBlue-500 font-bold text-xl"
-            >
-              SUBMIT
-            </button> */}
             {/* <hi-contact
               username="genesisapp"
               otp
