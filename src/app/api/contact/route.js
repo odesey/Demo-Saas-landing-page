@@ -1,4 +1,5 @@
 "use server";
+export const runtime = "edge";
 
 import connectDB from "@/lib/mongodb";
 import Contact from "@/app/models/Contact";
