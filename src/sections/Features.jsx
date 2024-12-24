@@ -248,7 +248,7 @@ const Features = () => {
             />
           ))}
         </div> */}
-        <div className="flex w-full sticky top-0 z-[-5]">
+        <div className="flex w-full sticky top-0 z-[-5] md:relative">
           <AnimatePresence mode="wait">
             {NEUMORPH_TABS.map((tab, index) => {
               return selected === index ? (

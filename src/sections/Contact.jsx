@@ -2,12 +2,17 @@
 
 // import "hi-contact";
 import { useSectionInView } from "@/lib/hooks";
+import ContactForm from "@/components/ContactForm";
 
 export const Contact = () => {
   const { ref } = useSectionInView("#contact");
   return (
-    <section id="contact" className="scroll-m-20 min-h-96 mt-32" ref={ref}>
-      <div className="px-8 mx-auto md:px-12 lg:px-32 max-w-7xl lg:pt-20">
+    <section
+      id="contact"
+      className="scroll-m-20 min-h-full mt-32 shadow-mdbl dark:shadow-big rounded-sm relative flex flex-1 pb-24"
+      ref={ref}
+    >
+      <div className="px-8 mx-auto md:px-12 lg:px-32 max-w-7xl lg:pt-20 container">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
           <div>
             <h1 className="pb-2 text-4xl font-normal tracking-tight font-display lg:text-6xl text-primeBlue-300">
@@ -19,6 +24,7 @@ export const Contact = () => {
             </p>
           </div>
           <div className="relative w-full mx-auto space-y-1 text-base">
+            <ContactForm />
             {/* <button
               id="neumorphism-button"
               // className="bg-primeBlue-50 dark:bg-onyx-900 border-primeBlue-500 border-2 text-primeBlue-500 font-bold text-xl"

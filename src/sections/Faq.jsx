@@ -24,11 +24,11 @@ const faq = [
     answer:
       "Absolutely NOT! By default, not even members of your church can see your personal information. You must share your information with other members of your church."
   },
-  {
-    question: "How much does GenesisApp cost?",
-    answer:
-      "During our testing period, GenesisApp is free for 90 days. After that we expect pricing to be about ~$0.75 per member per month."
-  },
+  // {
+  //   question: "How much does GenesisApp cost?",
+  //   answer:
+  //     "During our testing period, GenesisApp is free for 90 days. After that we expect pricing to be about ~$0.75 per member per month."
+  // },
   {
     question: "Are there any discounts available to small churches?",
     answer: "Yes, GenesisApp will be free for churches with 25 members or less."

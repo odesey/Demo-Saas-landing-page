@@ -10,7 +10,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 
 const font = Mulish({ subsets: ["latin"] });
 
-export const runtime = "edge";
+// export const runtime = "edge";
 
 export const metadata: Metadata = {
   title: "GenesisApp",
