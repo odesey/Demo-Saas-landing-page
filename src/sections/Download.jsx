@@ -47,9 +47,11 @@ const Download = () => {
             <div>
               <div className="flex flex-wrap gap-3 mb-12">
                 <a
-                  href="/"
-                  title="link to your page"
-                  aria-label="your label"
+                  href="https://apps.apple.com/us/app/genesisapp-mobile/id1350872968"
+                  title="Apple App Store"
+                  aria-label="Apple App Store"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mx-2 my-2 inline-flex items-center h-12 justify-center w-full sm:w-auto px-7 py-3 text-sm text-center shadow-mdbl dark:shadow-big duration-500 ease-in-out transform text-onyx-950-700 rounded-xl bg-primeBlue-50 border border-white dark:border-onyx-800 dark:bg-onyx-900"
                 >
                   <div className="logo">
@@ -73,9 +75,11 @@ const Download = () => {
                   </div>
                 </a>
                 <a
-                  href="/"
-                  title="link to your page"
-                  aria-label="your label"
+                  href="https://play.google.com/store/apps/details?id=com.genesisappmobile&pli=1"
+                  title="Google Play  Store"
+                  aria-label="Google Play Store"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mx-2 my-2 inline-flex items-center h-12 justify-center w-full sm:w-auto px-6 py-3 text-sm text-center shadow-mdbl dark:shadow-big duration-500 ease-in-out transform text-onyx-950-700 rounded-xl bg-primeBlue-50 border border-white dark:border-onyx-800 dark:bg-onyx-900"
                 >
                   <div className="image">

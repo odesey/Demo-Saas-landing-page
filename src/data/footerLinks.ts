@@ -4,10 +4,6 @@ export const footerLinks = [
     label: "Home"
   },
   {
-    href: "/about",
-    label: "About"
-  },
-  {
     href: "/privacy",
     label: "Privacy"
   }
