@@ -1,0 +1,11 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+            "appID": "UWZPK88VH2.com.genesisapp.mobile",
+            "paths": ["*"]
+            }
+        ]
+    }
+}

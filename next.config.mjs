@@ -1,5 +1,29 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async headers() {
+    return [
+      {
+        // Match all API routes
+        source: "/.well-known/apple-app-site-association",
+        headers: [
+          {
+            key: "Content-Type",
+            value: "application/json"
+          }
+        ]
+      },
+      {
+        // Match all API routes
+        source: "/.well-known/assetlinks.json",
+        headers: [
+          {
+            key: "Content-Type",
+            value: "application/json"
+          }
+        ]
+      }
+    ];
+  },
   images: {
     domains: ["imagedelivery.net"]
   },

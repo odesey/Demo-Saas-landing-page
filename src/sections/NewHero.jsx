@@ -40,9 +40,6 @@ export const NewHero = () => {
               <p className=" text-lg sm:text-xl opacity-60 font-bold mb-8 max-w-[564px]">
                 Download GenesisApp and get started today.
               </p>
-              <p className="md:text-xl opacity-60 font-light mb-8 left-24 relative flex text-lg">
-                (coming soon)
-              </p>
             </BlurFade>
 
             <BlurFade delay={0.25}>
