@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target" : { "namespace": "android_app", "package_name": "com.genesisappmobile",
+               "sha256_cert_fingerprints": [
+                   "F9:A7:EF:92:9F:46:78:50:58:C5:52:D5:A2:3C:A8:DB:87:0D:49:20:C2:56:1E:EE:A9:F9:A9:93:E0:69:C5:C8",
+               "FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C",
+               "BC:6D:C3:54:ED:A9:2B:3C:E8:58:D6:98:2F:E3:C9:B0:08:62:35:1A:1E:05:7F:49:D0:CB:8A:FC:FD:F6:F4:D7"] }
+}]

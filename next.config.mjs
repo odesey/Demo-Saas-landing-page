@@ -3,8 +3,7 @@ const nextConfig = {
   async headers() {
     return [
       {
-        // Match all API routes
-        source: "/.well-known/apple-app-site-association",
+        source: "/.well-known/assetlinks.json",
         headers: [
           {
             key: "Content-Type",
@@ -13,8 +12,7 @@ const nextConfig = {
         ]
       },
       {
-        // Match all API routes
-        source: "/.well-known/assetlinks.json",
+        source: "/.well-known/apple-app-site-association",
         headers: [
           {
             key: "Content-Type",
