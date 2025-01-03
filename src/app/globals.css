@@ -11,6 +11,19 @@
   font-weight: bold;
 } */
 
+#shadow-root {
+  border: none !important;
+  background-color: transparent !important;
+}
+#content {
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.main-wrapper {
+  background-color: transparent !important;
+}
+
 .magicpattern {
   z-index: -1;
   width: 100%;

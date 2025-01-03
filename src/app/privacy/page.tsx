@@ -1464,11 +1464,11 @@ export default function PrivacyPage() {
               <li className="my-4">
                 <a
                   className="text-primeBlue-500 underline"
-                  href="https://www.genesisapp.com/contact"
+                  href="https://www.genesisapp.com"
                   rel="external nofollow noopener"
                   target="_blank"
                 >
-                  https://www.genesisapp.com/contact
+                  https://www.genesisapp.com
                 </a>
               </li>
             </ul>

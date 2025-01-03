@@ -1,4 +1,4 @@
-// "use server";
+"use server";
 
 import connectDB from "@/lib/mongodb";
 import Contact from "@/app/models/Contact";
@@ -6,7 +6,7 @@ import Contact from "@/app/models/Contact";
 import { NextResponse } from "next/server";
 import mongoose from "mongoose"; //npm install mongoose
 
-export const runtime = "edge";
+// export const runtime = "edge";
 
 export async function POST(req) {
   const { firstName, lastName, subject, emailAddress, message } =

@@ -1,20 +1,11 @@
 // Images
-import first from "@/public/images/first.jpg";
-import second from "@/public/images/second.jpg";
-import third from "@/public/images/third.jpg";
-import fourth from "@/public/images/fourth.jpg";
-import shot from "@/public/shot1.jpg";
 
-import Anniversaries from "@/public/images/Anniversaries.png";
 import Announcements from "@/public/images/Announcements.png";
-import Birthdays from "@/public/images/Birthdays.png";
 import BroadcastNearbyChurches from "@/public/images/BroadcastNearbyChurches.png";
 import BulletinBoard from "@/public/images/BulletinBoard.png";
 import Calendar from "@/public/images/Calendar.png";
 import CommunityServices from "@/public/images/CommunityServices.png";
 import DeleteMember from "@/public/images/DeleteMember.png";
-import English from "@/public/images/English.png";
-import English2 from "@/public/images/English2.png";
 import French from "@/public/images/French.png";
 import Map from "@/public/images/Map.png";
 import MemberPermissions from "@/public/images/MemberPermissions.png";
